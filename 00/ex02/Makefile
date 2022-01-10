@@ -6,14 +6,14 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/10 19:27:37 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/10 19:13:11 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -g3
-NAME	= phonebook
-SRCS	= Phonebook.cpp Contact.cpp main.cpp
+CFLAGS	= -Wall -Wextra -Werror
+NAME	= account
+SRCS	= Account.cpp Account.cpp tests.cpp
 OBJS	= $(SRCS:.cpp=.o)
 RMRF	= rm -rf
 
