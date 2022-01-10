@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:52:29 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 15:06:11 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 15:20:44 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ public:
 	~Phonebook();
 
 private:
-
 	Contact	_contacts[8];
+	int		_nbContacts;
 };

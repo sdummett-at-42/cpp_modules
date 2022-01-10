@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:51:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 15:07:25 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 15:20:59 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Phonebook::Phonebook()
 {
 	std::cout << "Constructor called (Phonebook)" << std::endl;
+	this->_nbContacts = 0;
 }
 
 Phonebook::~Phonebook()
