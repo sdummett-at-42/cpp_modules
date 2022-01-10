@@ -6,9 +6,12 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:52:29 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 18:57:00 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 19:05:51 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include "Contact.hpp"
 #include <string>
@@ -29,3 +32,5 @@ private:
 	int		_nbContacts;
 	int		_oldestContact;
 };
+
+#endif

@@ -6,9 +6,12 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:52:26 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 18:53:56 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 19:05:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <string>
 #include <iostream>
@@ -35,3 +38,5 @@ private:
 	std::string	_phoneNumber;
 	std::string	_darkestSecret;
 };
+
+#endif
