@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:53:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 17:23:51 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 18:11:26 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int main(void)
 		else if (userInput == "SEARCH")
 		{
 			std::cout << "SEARCH MODE" << std::endl;
-			phonebook.displayContacts();
+			phonebook.displayAllContacts();
+			phonebook.displayOneContact();
 		}
 		else if (userInput == "EXIT")
 		{
