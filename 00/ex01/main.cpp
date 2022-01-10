@@ -6,11 +6,41 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:53:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 15:26:10 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 16:13:47 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+
+// void	add(Phonebook *phonebook)
+// {
+// 	(void)phonebook;
+// 	std::string	userInput;
+
+// 	std::cout << "Enter contact's firstname: ";
+// 	std::cin >> userInput;
+// 	// contact->addFirstname(userInput);
+// 	std::cout << "Enter contact's lastname: ";
+// 	std::cin >> userInput;
+// 	// contact->addLastname(userInput);
+// 	std::cout << "Enter contact's nickname: ";
+// 	std::cin >> userInput;
+// 	// contact->addNickname(userInput);
+// 	std::cout << "Enter contact's phone number: ";
+// 	std::cin >> userInput;
+// 	// contact->addPhoneNumber(userInput);
+// 	std::cout << "Enter contact's darkest secret: ";
+// 	std::cin >> userInput;
+// 	// contact->addDarkestSecret(userInput);
+// 	// contact->displayContact();
+// 	std::cout << std::endl;
+
+// }
+
+void	search(void)
+{
+
+}
 
 int main(void)
 {
@@ -20,9 +50,13 @@ int main(void)
 	std::cout << "Hello world !" << std::endl;
 	while (true)
 	{
+		std::cout << "Choose between ADD | SEARCH | EXIT" << std::endl;
 		std::cin >> userInput;
 		if (userInput == "ADD")
+		{
 			std::cout << "userInput == ADD" << std::endl;
+			phonebook.createNewContact();
+		}
 		else if (userInput == "SEARCH")
 			std::cout << "userInput == SEARCH" << std::endl;
 		else if (userInput == "EXIT")
@@ -32,6 +66,7 @@ int main(void)
 		}
 		else
 			std::cout << "Invalid input. Please enter ADD, SEARCH or EXIT." << std::endl;
+		phonebook.displayContacts();
 	}
 	return (0);
 }

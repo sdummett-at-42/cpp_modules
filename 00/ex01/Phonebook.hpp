@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:52:29 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 15:20:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 16:08:27 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ class Phonebook{
 public:
 	Phonebook();
 	~Phonebook();
+	void	createNewContact(void);
+	void	displayContacts(void);
 
 private:
 	Contact	_contacts[8];
