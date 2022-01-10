@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:52:24 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 16:15:55 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 16:44:59 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,24 @@ void	Contact::displayContact(void){
 	std::cout << "Nickname      : " << this->_nickname << std::endl;
 	std::cout << "Phone number  : " << this->_phoneNumber << std::endl;
 	std::cout << "Darkest Secret: " << this->_darkestSecret << std::endl;
+}
+
+std::string	Contact::getFirstname(void){
+	return (this->_firstname);
+}
+
+std::string	Contact::getLastname(void){
+	return (this->_lastname);
+}
+
+std::string	Contact::getNickname(void){
+	return (this->_nickname);
+}
+
+std::string	Contact::getPhoneNumber(void){
+	return (this->_phoneNumber);
+}
+
+std::string	Contact::getDarkestSecret(void){
+	return (this->_darkestSecret);
 }

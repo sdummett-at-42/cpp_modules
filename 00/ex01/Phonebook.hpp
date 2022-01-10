@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:52:29 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 16:08:27 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:12:24 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ public:
 private:
 	Contact	_contacts[8];
 	int		_nbContacts;
+	int		_oldestContact;
 };

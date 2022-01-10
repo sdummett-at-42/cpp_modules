@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:53:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 16:13:47 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:23:51 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,26 +47,27 @@ int main(void)
 	Phonebook	phonebook;
 	std::string	userInput;
 
-	std::cout << "Hello world !" << std::endl;
 	while (true)
 	{
 		std::cout << "Choose between ADD | SEARCH | EXIT" << std::endl;
 		std::cin >> userInput;
 		if (userInput == "ADD")
 		{
-			std::cout << "userInput == ADD" << std::endl;
+			std::cout << "ADD MODE" << std::endl;
 			phonebook.createNewContact();
 		}
 		else if (userInput == "SEARCH")
-			std::cout << "userInput == SEARCH" << std::endl;
+		{
+			std::cout << "SEARCH MODE" << std::endl;
+			phonebook.displayContacts();
+		}
 		else if (userInput == "EXIT")
 		{
-			std::cout << "userInput == EXIT" << std::endl;
+			std::cout << "EXITING" << std::endl;
 			return (0);
 		}
 		else
 			std::cout << "Invalid input. Please enter ADD, SEARCH or EXIT." << std::endl;
-		phonebook.displayContacts();
 	}
 	return (0);
 }
