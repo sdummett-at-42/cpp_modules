@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 01:42:00 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/11 01:50:29 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:51:53 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ public :
 private :
 	std::string	_name;
 };
+
+Zombie*	newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif
