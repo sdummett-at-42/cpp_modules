@@ -6,14 +6,14 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/11 15:09:26 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/11 15:23:49 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= zombies
-SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS	= main.cpp Zombie.cpp ZombieHorde.cpp
 OBJS	= $(SRCS:.cpp=.o)
 RMRF	= rm -rf
 
