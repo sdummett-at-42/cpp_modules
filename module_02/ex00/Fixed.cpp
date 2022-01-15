@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:41:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/15 17:05:18 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/15 18:13:16 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ Fixed&	Fixed::operator=(Fixed const & rhs) {
 }
 
 int	Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_n);
 }
 
 void	Fixed::setRawBits(int const raw) {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_n = raw;
 }
