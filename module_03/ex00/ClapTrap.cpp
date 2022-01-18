@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:47 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/18 22:20:42 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/18 22:32:31 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,11 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 }
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
-	(void)rhs;
-	ClapTrap *ptr = new ClapTrap;
-	return (*ptr);
+	this->_name = rhs.getName();
+	this->_hitpoints = rhs.getHitPoints();
+	this->_energy = rhs.getEnergy();
+	this->_attackDamage = rhs.getAttackDamage();
+	return (*this);
 	// ASSIGN ALL (this) PRIVATE MEMBERS VALUES TO  PRIVATE MEMBER'S VALUES
 }
 
