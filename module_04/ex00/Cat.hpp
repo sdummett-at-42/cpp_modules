@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:27:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 00:57:21 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:28:31 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class	Cat: public Animal {
 		Cat(Cat const & src);
 		Cat& operator=(Cat const & rhs);
 		~Cat();
+
+		virtual void	makeSound() const;
 };
 
 #endif

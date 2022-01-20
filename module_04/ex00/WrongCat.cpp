@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 23:30:17 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 16:25:10 by sdummett         ###   ########.fr       */
+/*   Created: 2022/01/20 16:40:26 by sdummett          #+#    #+#             */
+/*   Updated: 2022/01/20 16:41:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : Animal("Cat") {
-	std::cout << "[ Default Constructor Called (Cat) ]" << std::endl;
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {
+	std::cout << "[ Default Constructor Called (WrongCat) ]" << std::endl;
 	// std::cout << "[ Default ] : type : " << this->_type << std::endl;
 }
 
-Cat::Cat(Cat const & src) : Animal() {
-	std::cout << "[ Copy Constructor Called (Cat) ]" << std::endl;
+WrongCat::WrongCat(WrongCat const & src) : WrongAnimal() {
+	std::cout << "[ Copy Constructor Called (WrongCat) ]" << std::endl;
 	*this = src;
 }
 
-Cat& Cat::operator=(Cat const & rhs) {
+WrongCat& WrongCat::operator=(WrongCat const & rhs) {
 	/* Equal operator overload */
 	*this = rhs;
 	return (*this);
 }
 
-Cat::~Cat() {
-	std::cout << "[ Default Destructor Called (Cat) ]" << std::endl;
+WrongCat::~WrongCat() {
+	std::cout << "[ Default Destructor Called (WrongCat) ]" << std::endl;
 }
 
-void	Cat::makeSound() const {
+void	WrongCat::makeSound() const {
 	std::cout << this->_type << ": Meeeow!" << std::endl;
 }

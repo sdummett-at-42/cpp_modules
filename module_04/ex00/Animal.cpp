@@ -6,13 +6,15 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:21:11 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 01:00:45 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:47:01 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal() : 
+	_type("AnonymousAnimal")
+{
 	std::cout << "[ Default Constructor Called (Animal) ]" << std::endl;
 }
 
@@ -31,7 +33,7 @@ Animal::~Animal() {
 	std::cout << "[ Default Destructor Called (Animal) ]" << std::endl;
 }
 
-Animal::Animal(std::string type, std::string sound) : _type(type), _sound(sound) {
+Animal::Animal(std::string type) : _type(type) {
 	std::cout << "[ Parameterized Constructor Called (Animal) ]" << std::endl;
 }
 
@@ -39,7 +41,4 @@ std::string	Animal::getType() const {
 	return (this->_type);
 }
 
-void	Animal::makeSound() const {
-	if (this->_sound.size() > 0)
-		std::cout << this->_sound << "!" << std::endl;
-}
+void	Animal::makeSound() const {}

@@ -6,14 +6,14 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/20 00:52:35 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/20 16:38:07 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ 
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= animal
-SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS	= $(SRCS:.cpp=.o)
 RMRF	= rm -rf
 

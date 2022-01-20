@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:29:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 00:58:09 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:25:25 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog", "Waaaf!") {
+Dog::Dog() : Animal("Dog") {
 	std::cout << "[ Default Constructor Called (Dog) ]" << std::endl;
 }
 
@@ -29,4 +29,8 @@ Dog& Dog::operator=(Dog const & rhs) {
 
 Dog::~Dog() {
 	std::cout << "[ Default Destructor Called (Dog)]" << std::endl;
+}
+
+void	Dog::makeSound() const {
+	std::cout << this->_type << ": Waaaf!" << std::endl;
 }
