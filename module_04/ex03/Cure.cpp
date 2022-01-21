@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:06:09 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 19:57:55 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:54:17 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ Cure&	Cure::operator=(Cure const & rhs) {
 }
 
 Cure::~Cure() {
+
+}
+
+AMateria* Cure::clone() const {
 
 }
 

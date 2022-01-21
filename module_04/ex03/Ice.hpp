@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:07:01 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 19:54:31 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:53:25 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Ice : AMateria {
 		Ice&	operator=(Ice const & rhs);
 		~Ice();
 
+		virtual AMateria* clone() const;
 		virtual void use(ICharacter& target);
 
 };

@@ -6,12 +6,15 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:07:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 19:30:05 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 17:06:58 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_CLASS_HPP
 #define ICHARACTER_CLASS_HPP
+
+#include <string>
+#include "AMateria.hpp"
 
 class	ICharacter {
 	public:
@@ -20,6 +23,7 @@ class	ICharacter {
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
+		
 };
 
 #endif
