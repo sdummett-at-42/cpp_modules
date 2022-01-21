@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:06:52 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 16:52:41 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:08:06 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "AMateria.hpp"
 
 /* Cure is AMateria concrete class */
-class Cure : AMateria {
+class Cure : public AMateria {
 	public:
 		Cure();
 		Cure(Cure const & src);

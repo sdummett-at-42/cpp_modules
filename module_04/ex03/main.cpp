@@ -6,14 +6,15 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:11:36 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 16:41:09 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:21:32 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-
+#include "MateriaSource.hpp"
 
 int main()
 {

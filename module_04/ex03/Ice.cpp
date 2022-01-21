@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:17:10 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:51:17 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:49:50 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 Ice::Ice() {
 	std::cout << "[ Default Constructor Called (Ice) ]" << std::endl;
+	/* Init equippedMaterias and materiasOnFloor */
 }
 
-Ice::Ice(Ice const & src) {
+Ice::Ice(Ice const & src) :AMateria() {
 	std::cout << "[ Copy Constructor Called (Cure) ]" << std::endl;
 	*this = src;
 }
@@ -31,7 +32,7 @@ Ice::~Ice() {
 }
 
 AMateria* Ice::clone() const {
-
+	return (new Ice);
 }
 
 void Ice::use(ICharacter& target) {

@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:11:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:48:05 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:46:29 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ AMateria::AMateria(AMateria const & src) {
 }
 
 AMateria&	AMateria::operator=(AMateria const & rhs) {
+	(void)rhs;
 	return (*this);
 }
 
@@ -31,6 +32,7 @@ AMateria::~AMateria() {
 
 AMateria::AMateria(std::string const & type) {
 	std::cout << "[ Parameterized Constructor Called (AMateria) ]" << std::endl;
+	this->_type = type;
 }
 
 std::string const & AMateria::getType() const {
@@ -38,5 +40,6 @@ std::string const & AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {
+	(void)target;
 	/* I'll let this member function empty */
 }

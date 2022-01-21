@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:06:09 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:50:24 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:48:41 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cure::Cure() {
 	std::cout << "[ Default Constructor Called (Cure) ]" << std::endl;
 }
 
-Cure::Cure(Cure const & src) {
+Cure::Cure(Cure const & src) : AMateria() {
 	std::cout << "[ Copy Constructor Called (Cure) ]" << std::endl;
 	*this = src;
 }
@@ -31,7 +31,7 @@ Cure::~Cure() {
 }
 
 AMateria* Cure::clone() const {
-
+	return (new Cure);
 }
 
 void Cure::use(ICharacter& target) {

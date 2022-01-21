@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:07:01 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 16:53:25 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:08:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "AMateria.hpp"
 
 /* Ice is AMateria concrete class */
-class Ice : AMateria {
+class Ice : public AMateria {
 	public:
 		Ice();
 		Ice(Ice const & src);

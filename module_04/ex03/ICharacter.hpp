@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:07:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 17:06:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:49:05 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ICHARACTER_CLASS_HPP
 
 #include <string>
-#include "AMateria.hpp"
+class AMateria;
 
 class	ICharacter {
 	public:

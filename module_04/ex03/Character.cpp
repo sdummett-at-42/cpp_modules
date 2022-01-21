@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:22 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:59:21 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 19:47:31 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ Character&	Character::operator=(Character const & rhs) {
 	return (*this);
 }
 
+Character::Character(std::string const name): _name(name) {
+	std::cout << "[ Parameterized Constructor Called (Character) ]" << std::endl;
+
+}
+
 Character::~Character() {
 	std::cout << "[ Default Destructor Called (Character) ]" << std::endl;
 	deleteMaterias();
@@ -40,8 +45,7 @@ std::string const & Character::getName() const {
 
 void Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
-		if (this->_equippedMaterias[i] = 0) {
-			
+		if (this->_equippedMaterias[i] == nullptr) {
 			this->_equippedMaterias[i] = m;
 		}
 		else if (i == 3)
@@ -90,7 +94,7 @@ void		Character::deleteMaterias() {
 		delete this->_equippedMaterias[i];
 		i++;
 	}
-	delete this->_equippedMaterias;
+	delete this->_equippedMaterias[i];
 	i = 0;
 	while (this->_materiasOnFLoor[i] != nullptr) {
 		delete this->_materiasOnFLoor[i];
