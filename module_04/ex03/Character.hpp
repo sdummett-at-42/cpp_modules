@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:32 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 17:42:01 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:03:22 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 
 class	Character : ICharacter {
 	public:
-	/* CANONICAL CLASS DECLARATIONS HERE */
+	Character();
+	Character(Character const & src);
+	Character&	operator=(Character const & rhs);
+	~Character();
 
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m);

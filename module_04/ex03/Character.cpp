@@ -6,13 +6,28 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:22 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 17:54:02 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:04:56 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-/* CANONICAL CLASS DECLARATIONS HERE */
+Character::Character() {
+	std::cout << "[ Default Constructor Called (Character) ]" << std::endl;
+}
+
+Character::Character(Character const & src) {
+	std::cout << "[ Copy Constructor Called (Character) ]" << std::endl;
+}
+
+Character&	Character::operator=(Character const & rhs) {
+
+}
+
+Character::~Character() {
+	std::cout << "[ Default Destructor Called (Character) ]" << std::endl;
+}
+
 
 std::string const & Character::getName() const {
 	return (this->_name);
