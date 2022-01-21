@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:11:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:00:57 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:48:05 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ AMateria::AMateria() {
 
 AMateria::AMateria(AMateria const & src) {
 	std::cout << "[ Copy Constructor Called (AMateria) ]" << std::endl;
+	*this = src;
 }
 
 AMateria&	AMateria::operator=(AMateria const & rhs) {
-
+	return (*this);
 }
 
 AMateria::~AMateria() {

@@ -6,26 +6,31 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:22 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:04:56 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:59:21 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() {
+Character::Character() : _name("AnonymousCharacter") {
 	std::cout << "[ Default Constructor Called (Character) ]" << std::endl;
+
 }
 
 Character::Character(Character const & src) {
 	std::cout << "[ Copy Constructor Called (Character) ]" << std::endl;
+	*this = src;
 }
 
 Character&	Character::operator=(Character const & rhs) {
-
+	this->_name = rhs.getName();
+	/* Copy equippedMaterias and materiasOnFloor */
+	return (*this);
 }
 
 Character::~Character() {
 	std::cout << "[ Default Destructor Called (Character) ]" << std::endl;
+	deleteMaterias();
 }
 
 
@@ -77,4 +82,19 @@ void	Character::putMateriasOnFloor(AMateria *m) {
 	tmp[i + 1] = nullptr;
 	delete this->_materiasOnFLoor;
 	this->_materiasOnFLoor = tmp;
+}
+
+void		Character::deleteMaterias() {
+	int i = 0;
+	while (this->_equippedMaterias[i] != nullptr) {
+		delete this->_equippedMaterias[i];
+		i++;
+	}
+	delete this->_equippedMaterias;
+	i = 0;
+	while (this->_materiasOnFLoor[i] != nullptr) {
+		delete this->_materiasOnFLoor[i];
+		i++;
+	}
+	delete this->_materiasOnFLoor;
 }

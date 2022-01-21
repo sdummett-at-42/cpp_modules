@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:06:09 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:01:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:50:24 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ Cure::Cure() {
 
 Cure::Cure(Cure const & src) {
 	std::cout << "[ Copy Constructor Called (Cure) ]" << std::endl;
+	*this = src;
 }
 
 Cure&	Cure::operator=(Cure const & rhs) {
-
+	this->_type = rhs._type;
+	return (*this);
 }
 
 Cure::~Cure() {

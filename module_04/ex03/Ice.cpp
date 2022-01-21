@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:17:10 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 18:02:24 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/21 18:51:17 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ Ice::Ice() {
 
 Ice::Ice(Ice const & src) {
 	std::cout << "[ Copy Constructor Called (Cure) ]" << std::endl;
+	*this = src;
 }
 
 Ice&	Ice::operator=(Ice const & rhs) {
-
+	this->_type = rhs._type;
+	return (*this);
 }
 
 Ice::~Ice() {
@@ -31,7 +33,6 @@ Ice::~Ice() {
 AMateria* Ice::clone() const {
 
 }
-
 
 void Ice::use(ICharacter& target) {
 	std::cout << "* heals " \
