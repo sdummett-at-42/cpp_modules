@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:05:34 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:24:03 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/22 20:46:54 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class	MateriaSource : public IMateriaSource {
 		MateriaSource&	operator=(MateriaSource const & rhs);
 		~MateriaSource();
 
-		virtual void learnMateria(AMateria* m);
-		virtual AMateria* createMateria(std::string const & type);
+		virtual void 		learnMateria(AMateria* m);
+		virtual AMateria*	createMateria(std::string const & type);
 
 		private:
 			AMateria	*_materias[4];
