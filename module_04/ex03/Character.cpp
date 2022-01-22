@@ -6,15 +6,20 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:22 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:47:31 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/22 19:00:33 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character() : _name("AnonymousCharacter") {
 	std::cout << "[ Default Constructor Called (Character) ]" << std::endl;
-
+	for (int i = 0; i < 4; i++) {
+		this->_equippedMaterias[i] = nullptr;
+	}
+	this->_materiasOnFLoor = new AMateria*[1];
+	this->_materiasOnFLoor[0] = nullptr;
 }
 
 Character::Character(Character const & src) {
@@ -30,12 +35,17 @@ Character&	Character::operator=(Character const & rhs) {
 
 Character::Character(std::string const name): _name(name) {
 	std::cout << "[ Parameterized Constructor Called (Character) ]" << std::endl;
-
+	for (int i = 0; i < 4; i++) {
+		this->_equippedMaterias[i] = nullptr;
+	}
+	this->_materiasOnFLoor = new AMateria*;
+	this->_materiasOnFLoor[0] = nullptr;
 }
 
 Character::~Character() {
 	std::cout << "[ Default Destructor Called (Character) ]" << std::endl;
 	deleteMaterias();
+	// delete this->_materiasOnFLoor;
 }
 
 
@@ -46,24 +56,45 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (this->_equippedMaterias[i] == nullptr) {
+			std::cout << "equippedMateria" << "[" << i << "]" \
+			<< " is empty, equipping materia..." << std::endl;
 			this->_equippedMaterias[i] = m;
+			return ;
 		}
-		else if (i == 3)
+		else if (i == 3) {
+			std::cout << "All slot is busy" << std::endl;
 			delete m;
+		}
 	}
 }
 
 void Character::unequip(int idx) {
-	if (this->_equippedMaterias[idx] != 0) {
-		delete this->_equippedMaterias[idx];
-		this->_equippedMaterias[idx] = 0;
+	if (idx < 0 || idx > 3) {
+		std::cout << "[ unequip() ] No slot found at this index" << std::endl;
+		return ;
 	}
+	if (this->_equippedMaterias[idx] != nullptr) {
+		std::cout << "Materia equipped at slot " << idx \
+		<< ", unequipping this slot" << std::endl;
+		// SAVE PTR !!!
+		putMateriasOnFloor(this->_equippedMaterias[idx]);
+		this->_equippedMaterias[idx] = nullptr;
+	}
+	else {
+		std::cout << "Slot " << idx << " was already empty" << std::endl;
+	}
+
 }
 
 void Character::use(int idx, ICharacter& target) {
-	if (this->_equippedMaterias[idx] != 0) {
+	if (idx < 0 || idx > 3) {
+		std::cout << "[ use() ] No slot found at this index" << std::endl;
+		return ;
+	}
+	if (this->_equippedMaterias[idx] != nullptr) {
 		this->_equippedMaterias[idx]->use(target);
 	}
+
 }
 
 int		Character::getNumberMateriasOnFloor() const {
@@ -76,7 +107,8 @@ int		Character::getNumberMateriasOnFloor() const {
 
 void	Character::putMateriasOnFloor(AMateria *m) {
 	int	i = getNumberMateriasOnFloor();
-	AMateria	**tmp = new AMateria* [i + 1];
+	AMateria	**tmp = new AMateria*[i + 1];
+	std::cout << "Allocating " << i + 1 << " AMateria *" << std::endl;
 	i = 0;
 	while (this->_materiasOnFLoor[i] != nullptr) {
 		tmp[i] = this->_materiasOnFLoor[i];
@@ -88,17 +120,16 @@ void	Character::putMateriasOnFloor(AMateria *m) {
 	this->_materiasOnFLoor = tmp;
 }
 
-void		Character::deleteMaterias() {
-	int i = 0;
-	while (this->_equippedMaterias[i] != nullptr) {
+void	Character::deleteMaterias() {
+	int i;
+	for (i = 0; i < 4; i++) {
 		delete this->_equippedMaterias[i];
-		i++;
 	}
-	delete this->_equippedMaterias[i];
 	i = 0;
 	while (this->_materiasOnFLoor[i] != nullptr) {
 		delete this->_materiasOnFLoor[i];
 		i++;
 	}
-	delete this->_materiasOnFLoor;
+	delete this->_materiasOnFLoor[i];
+	delete _materiasOnFLoor;
 }

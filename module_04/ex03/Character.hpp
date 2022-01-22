@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:32 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:40:29 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/22 18:53:33 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CHARACTER_CLASS_HPP
 
 #include "ICharacter.hpp"
+#include <iostream>
 
 class	Character : public ICharacter {
 	public:

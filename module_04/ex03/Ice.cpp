@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:17:10 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:49:50 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/22 16:55:58 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice() {
+Ice::Ice() : AMateria("ice") {
 	std::cout << "[ Default Constructor Called (Ice) ]" << std::endl;
 	/* Init equippedMaterias and materiasOnFloor */
 }
@@ -36,6 +36,6 @@ AMateria* Ice::clone() const {
 }
 
 void Ice::use(ICharacter& target) {
-	std::cout << "* heals " \
-	<< target.getName() << "'s wounds *" << std::endl;
+	std::cout << "* shoots an ice bolt at " \
+	<< target.getName() << "*" << std::endl;
 }
