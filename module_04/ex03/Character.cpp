@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:22 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/22 19:00:33 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/22 20:19:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	Character::putMateriasOnFloor(AMateria *m) {
 	}
 	tmp[i] = m;
 	tmp[i + 1] = nullptr;
-	delete this->_materiasOnFLoor;
+	delete[] this->_materiasOnFLoor;
 	this->_materiasOnFLoor = tmp;
 }
 
@@ -131,5 +131,5 @@ void	Character::deleteMaterias() {
 		i++;
 	}
 	delete this->_materiasOnFLoor[i];
-	delete _materiasOnFLoor;
+	delete[] _materiasOnFLoor;
 }
