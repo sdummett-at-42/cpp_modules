@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:51:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 16:23:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 23:27:10 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ void	Phonebook::displayOneContact(void) {
 	std::string	userInput;
 	int			contactIndex;
 
-	std::cout << "Which contact do you want to display informations [1 - 8]? ";
+	std::cout << "Which contact do you want to display informations [1 - 8]? " << std::endl;
+	std::cout << ">>> ";
 	std::cin >> userInput;
 	contactIndex = atoi(userInput.c_str());
 	if (contactIndex < 1 || contactIndex > 8 || contactIndex > this->_nbContacts)

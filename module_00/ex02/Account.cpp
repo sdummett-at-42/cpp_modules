@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:04:05 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 16:46:11 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 23:35:45 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	Account::displayAccountsInfos( void ) {
 	std::cout << "accounts:" << Account::_nbAccounts << ";";
 	std::cout << "total:" << Account::_totalAmount << ";";
 	std::cout << "deposits:" << Account::_totalNbDeposits << ";";
-	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << ";" << std::endl;
+	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 }
 
 /* Member functions */
@@ -105,8 +105,8 @@ void	Account::makeDeposit( int deposit ) {
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";
 	std::cout << "deposit:" << deposit << ";";
-	std::cout << "p_amount:" << this->_amount + deposit << ";";
-	std::cout << "nb_deposits:" << this->_nbDeposits << ";" << std::endl;
+	std::cout << "amount:" << this->_amount + deposit << ";";
+	std::cout << "nb_deposits:" << this->_nbDeposits << std::endl;
 	this->_amount += deposit;
 	this->_totalAmount += deposit;
 
@@ -125,7 +125,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 	this->_nbWithdrawals++;
 	std::cout << "withdrawal:" << withdrawal << ";";
 	std::cout << "amount:" << this->_amount - withdrawal << ";";
-	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << ";" << std::endl;
+	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	if (this->_amount - withdrawal < 0)
 		withdrawal = this->_amount;
 	this->_amount -= withdrawal;
@@ -143,5 +143,5 @@ void	Account::displayStatus( void ) const {
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "deposits:" << this->_nbDeposits << ";";
-	std::cout << "withdrawals:" << this->_nbWithdrawals << ";" << std::endl;
+	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
 }
