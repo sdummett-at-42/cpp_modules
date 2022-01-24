@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:51:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 18:57:39 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:23:58 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ void	Phonebook::displayAllContacts(void) {
 	int			i = 0;
 	std::string	field;
 
+	std::cout << "------------------------------------------------" << std::endl;
 	std::cout << "| INDEX |  FIRSTNAME |  LASTNAME  |  NICKNAME  |" << std::endl;
+	std::cout << "------------------------------------------------" << std::endl;
+
 	while (i < this->_nbContacts)
 	{
 		std::cout << "|   " << i + 1 << "   | ";
@@ -71,8 +74,10 @@ void	Phonebook::displayAllContacts(void) {
 		std::cout << field << " | ";
 		field = arrangeField(this->_contacts[i].getNickname());
 		std::cout << field << " |" << std::endl;
+		std::cout << "------------------------------------------------" << std::endl;
 		i++;
 	}
+
 }
 
 void	Phonebook::displayOneContact(void) {
@@ -81,7 +86,7 @@ void	Phonebook::displayOneContact(void) {
 
 	std::cout << "Which contact do you want to display informations [1 - 8]? ";
 	std::cin >> userInput;
-	contactIndex = stoi(userInput);
+	contactIndex = atoi(userInput.c_str());
 	if (contactIndex < 1 || contactIndex > 8 || contactIndex > this->_nbContacts)
 	{
 		std::cout << "This contact doesn't exist." << std::endl;

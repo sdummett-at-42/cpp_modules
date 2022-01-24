@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:04:05 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/11 01:01:45 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:46:11 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	Account::displayAccountsInfos( void ) {
 /* Member functions */
 void	Account::makeDeposit( int deposit ) {
 	std::cout << gettime() << " ";
+	this->_nbDeposits++;
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";
 	std::cout << "deposit:" << deposit << ";";
@@ -108,7 +109,7 @@ void	Account::makeDeposit( int deposit ) {
 	std::cout << "nb_deposits:" << this->_nbDeposits << ";" << std::endl;
 	this->_amount += deposit;
 	this->_totalAmount += deposit;
-	this->_nbDeposits++;
+
 	this->_totalNbDeposits++;
 }
 
@@ -121,6 +122,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 		std::cout << "withdrawal:refused" << std::endl;
 		return (false);
 	}
+	this->_nbWithdrawals++;
 	std::cout << "withdrawal:" << withdrawal << ";";
 	std::cout << "amount:" << this->_amount - withdrawal << ";";
 	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << ";" << std::endl;
@@ -128,7 +130,6 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 		withdrawal = this->_amount;
 	this->_amount -= withdrawal;
 	this->_totalAmount -= withdrawal;
-	this->_nbWithdrawals++;
 	this->_totalNbWithdrawals++;
 	return (true);
 }
