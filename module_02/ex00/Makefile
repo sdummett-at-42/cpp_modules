@@ -6,11 +6,11 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/15 17:09:24 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/24 20:03:28 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= c++ 
+CC		= clang++ 
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= canonicalForm
 SRCS	= main.cpp Fixed.cpp

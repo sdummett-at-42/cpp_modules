@@ -6,39 +6,40 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:41:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/17 21:37:14 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 20:29:22 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 /* Constructor and destructors */
-Fixed::Fixed() : _n(0) {
-	// std::cout << "Default constructor called" << std::endl;
+Fixed::Fixed() : 
+	_fixedPoint(0) {
+	// std::cout << "[ Default constructor Called (Fixed)]" << std::endl;
 }
 
-
 Fixed::Fixed(Fixed const & src) {
-	// std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "[ Copy Constructor Called (Fixed) ]" << std::endl;
 	*this = src;
 }
 
-Fixed::Fixed(int n) : _n(_toFixedPoint(n)) {
-	// std::cout << "Int constructor called" << std::endl;
+Fixed::Fixed(int n) :
+	_fixedPoint(_toFixedPoint(n)) {
+	// std::cout << "[ Parameterized (int) Constructor Called (Fixed) ]" << std::endl;
 }
 
-Fixed::Fixed(float n) : _n(_toFixedPoint(n)) {
-	// std::cout << "Float constructor called" << std::endl;
+Fixed::Fixed(float n) :
+	_fixedPoint(_toFixedPoint(n)) {
+	// std::cout << "[ Parameterized (float) Constructor Called (Fixed) ]" << std::endl;
 }
 
 Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
+	// std::cout << "[ Default Destructor Called (Fixed)]" << std::endl;
 }
 
-/* Operator overload */
 Fixed&	Fixed::operator=(Fixed const & rhs) {
-	// std::cout << "Assignation operator called" << std::endl;
-	this->_n = rhs.getRawBits();
+	// std::cout << "[ Assignment Operator Called (Fixed) ]" << std::endl;
+	this->_fixedPoint = rhs.getRawBits();
 	return (*this);
 }
 
@@ -49,15 +50,15 @@ std::ostream&	operator<<(std::ostream& o, Fixed const & rhs) {
 
 /* Accessors */
 int	Fixed::getRawBits(void) const {
-	return (this->_n);
+	return (this->_fixedPoint);
 }
 
 void	Fixed::setRawBits(int const raw) {
-	this->_n = raw;
+	this->_fixedPoint = raw;
 }
 
 float	Fixed::toFloat(void) const {
-	return (this->_n / _ft_pow(2, this->_fractionalBits));
+	return (this->_fixedPoint / _ft_pow(2, this->_fractionalBits));
 }
 
 int		Fixed::toInt(void) const {
@@ -84,23 +85,23 @@ float	Fixed::_ft_pow(float x, float y) const {
 // prefix increment
 Fixed&	Fixed::operator++()
 {
-	this->_n++;
-	return *this; // return new value by reference
+	this->_fixedPoint++;
+	return *this;
 }
 
 // postfix increment
 Fixed	Fixed::operator++(int)
 {
-	Fixed old = *this; // copy old value
-	operator++();  // prefix increment
-	return old;    // return old value
+	Fixed old = *this;
+	operator++();
+	return old;
 }
 
 // prefix decrement
 Fixed&	Fixed::operator--()
 {
-	this->_n--;
-	return *this; // return new value by reference
+	this->_fixedPoint--;
+	return *this;
 }
 
 // postfix decrement
@@ -176,4 +177,3 @@ int		Fixed::getMax(const int& lhsFixedPoint, const int& rhsFixedPoint) const {
 		return (lhsFixedPoint);
 	return (rhsFixedPoint);
 }
-

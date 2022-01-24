@@ -6,41 +6,40 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:41:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/17 19:01:30 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 20:20:46 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 /* Constructor and destructors */
-Fixed::Fixed() {
-	std::cout << "Default constructor called" << std::endl;
+Fixed::Fixed() :
+	_fixedPoint(0) {
+	std::cout << "[ Default constructor Called (Fixed)]" << std::endl;
 }
 
-
 Fixed::Fixed(Fixed const & src) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "[ Copy Constructor Called (Fixed) ]" << std::endl;
 	*this = src;
 }
 
 Fixed::Fixed(int n) {
-	std::cout << "Int constructor called" << std::endl;
-	this->_n = roundf(n * _ft_pow(2, this->_fractionalBits));
+	std::cout << "[ Parameterized (int) Constructor Called (Fixed) ]" << std::endl;
+	this->_fixedPoint = roundf(n * _ft_pow(2, this->_fractionalBits));
 }
 
 Fixed::Fixed(float n) {
-	std::cout << "Float constructor called" << std::endl;
-	this->_n = roundf(n * _ft_pow(2, this->_fractionalBits));
+	std::cout << "[ Parameterized (float) Constructor Called (Fixed) ]" << std::endl;
+	this->_fixedPoint = roundf(n * _ft_pow(2, this->_fractionalBits));
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "[ Default Destructor Called (Fixed)]" << std::endl;
 }
 
-/* Operator overload */
 Fixed&	Fixed::operator=(Fixed const & rhs) {
-	std::cout << "Assignation operator called" << std::endl;
-	this->_n = rhs.getRawBits();
+	std::cout << "[ Assignment Operator Called (Fixed) ]" << std::endl;
+	this->_fixedPoint = rhs.getRawBits();
 	return (*this);
 }
 
@@ -51,15 +50,15 @@ std::ostream&	operator<<(std::ostream& o, Fixed const & rhs) {
 
 /* Accessors */
 int	Fixed::getRawBits(void) const {
-	return (this->_n);
+	return (this->_fixedPoint);
 }
 
 void	Fixed::setRawBits(int const raw) {
-	this->_n = raw;
+	this->_fixedPoint = raw;
 }
 
 float	Fixed::toFloat(void) const {
-	return (this->_n / _ft_pow(2, this->_fractionalBits));
+	return (this->_fixedPoint / _ft_pow(2, this->_fractionalBits));
 }
 
 int		Fixed::toInt(void) const {
