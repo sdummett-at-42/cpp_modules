@@ -6,11 +6,11 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/11 15:37:05 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/24 17:23:39 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= c++
+CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= string
 SRCS	= main.cpp

@@ -6,11 +6,11 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/14 14:01:22 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/24 17:24:16 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= c++ 
+CC		= clang++ 
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= karenFilter
 SRCS	= main.cpp Karen.cpp

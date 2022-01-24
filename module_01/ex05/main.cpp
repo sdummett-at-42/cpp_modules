@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 00:10:58 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/13 17:30:06 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:45:47 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void) {
 	karen.complain("INFO");
 	karen.complain("WARNING");
 	karen.complain("ERROR");
-	karen.complain("WTF");
+	karen.complain("WTF"); // This is an error
 	karen.complain("WARNING");
 	karen.complain("ERROR");
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:41:14 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/11 17:23:10 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:10:38 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public :
 	void	setWeapon(Weapon &weapon);
 private :
 	std::string	_name;
-	Weapon*		_weapon;
+	Weapon&		_weapon;
 };
 
 #endif

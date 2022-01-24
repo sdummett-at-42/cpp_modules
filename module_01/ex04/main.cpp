@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:35:01 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/12 20:55:11 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:43:29 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ bool	isInString(std::string str, int i, std::string s1) {
 	int j = 0;
 
 	while (str[i] != '\0' && s1[j] != '\0') {
-		std::cout << str[i] << " | " << s1[j] << std::endl;
 		if (str[i] != s1[j])
 			return (false);
 		i++;
@@ -73,6 +72,11 @@ int	main(int ac, char **av) {
 	}
 	strStream << ifs.rdbuf();
 	str = strStream.str();
+	if (str.size() == 0) {
+		std::cout << "File is empty" << std::endl;
+		ifs.close();
+		return 0;
+	}
 
 	int i = 0;
 	while (str[i] != '\0') {
@@ -83,26 +87,17 @@ int	main(int ac, char **av) {
 		else
 			i++;
 	}
-	std::cout << "Final str => |" << str << "|" << std::endl;
 	ifs.close();
 
 	upperrize(av[1]);
 	std::string		outfilename = av[1];
-	std::ofstream	ofs(outfilename);
+	std::ofstream	ofs(outfilename + ".replace");
 	if(!ofs) {
         std::cout << "Opening the file " << outfilename << " has failed" << std::endl;
 		return (0);
     }
+	str.pop_back();
 	ofs << str << std::endl;
 	ofs.close();
-
-	// [X] OPEN FILE 
-	// [X] PUT IT TO A STRING
-	// [X] REPLACE WHAT NEEDS TO BE REPLACED
-	// [x] OPEN 2ND FILE
-	// [x] AND PUT THE STRING IN IT
-	// [X] RETURN AN ERROR IF s1 OR s2 IS EMPTY
-	// [X] RETURN AN ERROR IF OPEN THE INPUT FILE HAS FAILED
-	// [] MAKE A BUNCH OF TESTS
 	return (0);
 }

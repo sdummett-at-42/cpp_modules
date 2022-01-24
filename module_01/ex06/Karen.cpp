@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 00:11:00 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/14 14:22:59 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/24 19:06:26 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ void	Karen::setFilter(std::string filter) {
 int		Karen::getLevel(std::string level) {
 	for	(int i = 0; i < 4; i++) {
 		if (level.compare(levelStr[i]) == 0) {
+			
 			if (this->_filter != -1 && i >= this->_filter)
 				return (i);
-			break ;
+			return -1 ;
 		}
 	}
-	return (-1);
+	return (-2);
 }
 
 void	Karen::complain(std::string level) {
@@ -52,19 +53,20 @@ void	Karen::complain(std::string level) {
 
 	switch (realLevel)
 	{
-	case -1:
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		std::cout << std::endl;
-		break;
-	
-	default:
-		for (int i = 0; i < 4; i++)	{
-			if (level.compare(levelStr[i]) == 0) {
-				(this->*fp[i])();
-				break ;
+		case -2:
+			break;
+		case -1:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			std::cout << std::endl;
+			break;
+		default:
+			for (int i = 0; i < 4; i++)	{
+				if (level.compare(levelStr[i]) == 0) {
+					(this->*fp[i])();
+					break ;
+				}
 			}
-		}
-		break;
+			break;
 	}
 }
 
