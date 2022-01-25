@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:53:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 16:00:35 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/25 11:13:57 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
 	{
 		std::cout << "[ MAIN MENU ]" << std::endl;
 		std::cout << "Enter either ADD | SEARCH | EXIT:" << std::endl;
+		std::cout << ">>> ";
 		std::cin >> userInput;
 		if (userInput == "ADD")
 		{
