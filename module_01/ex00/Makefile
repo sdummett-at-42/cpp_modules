@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/24 17:36:32 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/25 20:38:34 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= zombies
 SRCS	= main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 OBJS	= $(SRCS:.cpp=.o)

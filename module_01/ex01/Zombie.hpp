@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 01:42:00 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/11 15:23:28 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:52:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
  
 class	Zombie {
 
-public :
-	Zombie();
-	Zombie(std::string name);
-	~Zombie();
-	void	annonce(void) const;
-	void	setName(std::string name);
+	public :
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		void	annonce(void) const;
+		void	setName(std::string name);
 
-private :
-	std::string	_name;
+	private :
+		std::string	_name;
 };
 
 Zombie*	newZombie(std::string name);

@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/24 17:23:46 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/25 20:38:48 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= humans
 SRCS	= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS	= $(SRCS:.cpp=.o)

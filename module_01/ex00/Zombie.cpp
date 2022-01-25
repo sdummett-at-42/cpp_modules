@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 01:41:58 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 17:26:19 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:45:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie() : _name("name") {
+Zombie::Zombie() : _name("AnonymousZombie") {
 }
 
 Zombie::Zombie(std::string name) : _name(name) {

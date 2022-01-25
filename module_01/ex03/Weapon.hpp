@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:41:07 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 17:53:38 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:51:42 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <string>
 
 class	Weapon {
-public :
-	Weapon(std::string type);
-	std::string const &	getType(void) const;
-	void				setType(std::string type);
+	public :
+		Weapon(std::string type);
+		std::string const &	getType(void) const;
+		void				setType(std::string type);
 
-private :
-	std::string	_type;
+	private :
+		std::string	_type;
 };
 
 #endif
