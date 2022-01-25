@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:45:52 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/10 14:47:56 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/25 11:03:24 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 				std::cout << (char)toupper(av[i][j]);
 				j++;
 			}
-			std::cout << " ";
+			// std::cout << " ";
 			i++;
 		}
 		std::cout << std::endl;
