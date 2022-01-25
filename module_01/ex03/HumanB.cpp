@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:41:18 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 18:13:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/25 21:27:12 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 HumanB::HumanB(std::string name) :
 	_name(name),
-	_weapon(nullptr) {}
+	_weapon(NULL) {}
 
 void	HumanB::attack(void) const {
 	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
