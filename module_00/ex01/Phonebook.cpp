@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:51:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 23:27:10 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/26 13:59:34 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ void	Phonebook::createNewContact(void) {
 
 	contactIndex = this->_oldestContact;
 	std::cout << "Enter contact's firstname: ";
-	std::cin >> userInput;
+	std::getline(std::cin, userInput);
 	this->_contacts[contactIndex].addFirstname(userInput);
 	std::cout << "Enter contact's lastname: ";
-	std::cin >> userInput;
+	std::getline(std::cin, userInput);
 	this->_contacts[contactIndex].addLastname(userInput);
 	std::cout << "Enter contact's nickname: ";
-	std::cin >> userInput;
+	std::getline(std::cin, userInput);
 	this->_contacts[contactIndex].addNickname(userInput);
 	std::cout << "Enter contact's phone number: ";
-	std::cin >> userInput;
+	std::getline(std::cin, userInput);
 	this->_contacts[contactIndex].addPhoneNumber(userInput);
 	std::cout << "Enter contact's darkest secret: ";
-	std::cin >> userInput;
+	std::getline(std::cin, userInput);
 	this->_contacts[contactIndex].addDarkestSecret(userInput);
 	std::cout << std::endl;
 	if (this->_oldestContact == 7)
@@ -53,7 +53,7 @@ std::string	arrangeField(std::string field) {
 		field.push_back('.');
 	}
 	while (field.size() < 10)
-		field.insert(field.cbegin(), ' ');
+		field.insert(field.begin(), ' ');
 	return (field);
 }
 
@@ -86,9 +86,9 @@ void	Phonebook::displayOneContact(void) {
 
 	std::cout << "Which contact do you want to display informations [1 - 8]? " << std::endl;
 	std::cout << ">>> ";
-	std::cin >> userInput;
+	std::getline(std::cin, userInput);
 	contactIndex = atoi(userInput.c_str());
-	if (contactIndex < 1 || contactIndex > 8 || contactIndex > this->_nbContacts)
+	if ((contactIndex < 1 || contactIndex > 8) || contactIndex > this->_nbContacts)
 	{
 		std::cout << "This contact doesn't exist." << std::endl;
 		return ;
