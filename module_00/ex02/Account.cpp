@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:04:05 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 23:35:45 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/26 14:26:11 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 #include <iostream>
 #include <ctime>
 #include <string>
+#include <sstream>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
+
+std::string	toString(int val) {
+	std::stringstream	strStream;
+	std::string			str;
+
+	strStream << val;
+	strStream >> str;
+	return (str);
+}
 
 std::string	gettime(void) {
 	std::string	currentTime;
@@ -28,27 +38,27 @@ std::string	gettime(void) {
 	tm		*ltm = localtime(&now);
 	
 	currentTime.append("[");
-	currentTime.append(std::to_string(1900 + ltm->tm_year));
-	s = std::to_string(1 + ltm->tm_mon);
+	currentTime.append(toString(1900 + ltm->tm_year));
+	s = toString(1 + ltm->tm_mon);
 	while (s.size() < 2)
-		s.insert(s.cbegin(), '0');
+		s.insert(s.begin(), '0');
 	currentTime += s;
-	s = std::to_string(ltm->tm_mday);
+	s = toString(ltm->tm_mday);
 	while (s.size() < 2)
-		s.insert(s.cbegin(), '0');
+		s.insert(s.begin(), '0');
 	currentTime += s;
 	currentTime.append("_");
-	s = std::to_string(ltm->tm_hour);
+	s = toString(ltm->tm_hour);
 	while (s.size() < 2)
-		s.insert(s.cbegin(), '0');
+		s.insert(s.begin(), '0');
 	currentTime += s;
-	s = std::to_string(ltm->tm_min);
+	s = toString(ltm->tm_min);
 	while (s.size() < 2)
-		s.insert(s.cbegin(), '0');
+		s.insert(s.begin(), '0');
 	currentTime += s;
-	s = std::to_string(ltm->tm_sec);
+	s = toString(ltm->tm_sec);
 	while (s.size() < 2)
-		s.insert(s.cbegin(), '0');
+		s.insert(s.begin(), '0');
 	currentTime += s;
 	currentTime.append("]");
 	return (currentTime);
