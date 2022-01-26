@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:53:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/26 14:05:29 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/26 18:04:22 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int main(void)
 	printMenu();
 	while (std::getline(std::cin, userInput))
 	{
-		printMenu();
 		if (userInput == "ADD")
 		{
 			std::cout << "[ ADD MODE ]" << std::endl;
@@ -46,6 +45,7 @@ int main(void)
 		else
 			std::cout << "Invalid input. Please enter ADD, SEARCH or EXIT." << std::endl;
 		userInput.clear();
+		printMenu();
 	}
 	return (0);
 }
