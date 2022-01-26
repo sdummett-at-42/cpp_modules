@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/19 16:15:47 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/26 18:44:30 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= scavTrap
 SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS	= $(SRCS:.cpp=.o)

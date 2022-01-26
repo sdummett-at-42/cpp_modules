@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/24 20:03:44 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/26 18:34:57 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++ 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= bsp
 SRCS	= main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS	= $(SRCS:.cpp=.o)

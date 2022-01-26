@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/20 17:29:49 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/26 18:45:19 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= animal
 SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS	= $(SRCS:.cpp=.o)
