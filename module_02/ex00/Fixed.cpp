@@ -6,11 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:41:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 20:20:42 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:09:19 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+#include <cmath>
 
 Fixed::Fixed() :
 	_fixedPoint(0) {
@@ -37,5 +39,14 @@ int	Fixed::getRawBits(void) const {
 }
 
 void	Fixed::setRawBits(int const raw) {
-	this->_fixedPoint = raw;
+	this->_fixedPoint = roundf(raw * _ft_pow(2, this->_fractionalBits));
+}
+
+float	Fixed::_ft_pow(float x, float y) const {
+	float res = 1;
+	while (y > 0) {
+		res = res * x;
+		y--;
+	}
+	return (res);
 }

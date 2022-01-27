@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:40:56 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 20:08:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:09:04 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Fixed
 		void	setRawBits(int const raw);
 
 	private :
+		float				_ft_pow(float x, float y) const;
 		int					_fixedPoint;
 		static const int	_fractionalBits = 8;
 };

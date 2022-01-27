@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:40:56 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 20:40:56 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:07:46 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ class Fixed
 		bool	operator==(const Fixed& lhs) const;
 		bool	operator!=(const Fixed& lhs) const;
 		
-		static const Fixed&	min(const Fixed& lhs, const Fixed& rhs);
-		static const Fixed&	max(const Fixed& lhs, const Fixed& rhs);
+		static const Fixed	min(const Fixed& lhs, const Fixed& rhs);
+		static const Fixed	max(const Fixed& lhs, const Fixed& rhs);
+		static Fixed		min(Fixed& lhs, Fixed& rhs);
+		static Fixed		max(Fixed& lhs, Fixed& rhs);
 
 		int		getMin(const int& lhsFixedPoint, const int& rhsFixedPoint) const;
 		int		getMax(const int& lhsFixedPoint, const int& rhsFixedPoint) const;

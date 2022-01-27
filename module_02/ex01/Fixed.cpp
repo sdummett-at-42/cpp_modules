@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:41:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 20:20:46 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:07:38 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	Fixed::getRawBits(void) const {
 }
 
 void	Fixed::setRawBits(int const raw) {
-	this->_fixedPoint = raw;
+	this->_fixedPoint = roundf(raw * _ft_pow(2, this->_fractionalBits));
 }
 
 float	Fixed::toFloat(void) const {

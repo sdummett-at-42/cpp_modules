@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 14:41:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/24 20:29:22 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:35:43 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	Fixed::getRawBits(void) const {
 }
 
 void	Fixed::setRawBits(int const raw) {
-	this->_fixedPoint = raw;
+	this->_fixedPoint = _toFixedPoint(raw);
 }
 
 float	Fixed::toFloat(void) const {
@@ -153,13 +153,25 @@ bool	Fixed::operator!=(const Fixed& lhs) const {
 	return (toFloat() != lhs.toFloat());
 }
 
-const Fixed&	Fixed::min(const Fixed& lhs, const Fixed& rhs) {
+const Fixed	Fixed::min(const Fixed& lhs, const Fixed& rhs) {
 	if (lhs.toFloat() < rhs.toFloat())
 		return (lhs);
 	return (rhs);
 }
 
-const Fixed&	Fixed::max(const Fixed& lhs, const Fixed& rhs) {
+const Fixed	Fixed::max(const Fixed& lhs, const Fixed& rhs) {
+	if (lhs.toFloat() > rhs.toFloat())
+		return (lhs);
+	return (rhs);
+}
+
+Fixed	Fixed::min(Fixed& lhs, Fixed& rhs) {
+	if (lhs.toFloat() < rhs.toFloat())
+		return (lhs);
+	return (rhs);
+}
+
+Fixed	Fixed::max(Fixed& lhs, Fixed& rhs) {
 	if (lhs.toFloat() > rhs.toFloat())
 		return (lhs);
 	return (rhs);
