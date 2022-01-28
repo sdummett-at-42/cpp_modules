@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:48:58 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 11:13:05 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 18:44:53 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include "ScavTrap.hpp"
 
 class DiamondTrap : public FragTrap, public ScavTrap {
+
 	public :
-		/* CANONICAL FORM */
 		DiamondTrap();
 		DiamondTrap(DiamondTrap const & src);
 		DiamondTrap& operator=(DiamondTrap const & rhs);
@@ -29,7 +29,7 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 		void	attack(std::string const & target);
 		void	whoAmI();
 
-		private :
+	private :
 		std::string _name;
 };
 

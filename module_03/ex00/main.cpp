@@ -6,13 +6,11 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:52 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 15:47:34 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:36:00 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-// CREATE AN ORTHODOX FORM OF CLASS CLAPTRAP
 
 int main() {
 
@@ -39,7 +37,6 @@ int main() {
 	}
 	cp1.getState();
 	
-
 	/* [ Second Test ] */
 	std::cout << std::endl;
 	ClapTrap	cp2("WALL-E");
@@ -61,6 +58,7 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		cp2.attack("Terminator");
 	}
+	cp2.getState();
 
 	/* [ Third Test ] */
 	std::cout << std::endl;

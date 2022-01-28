@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:19:25 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/19 20:12:49 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 18:34:12 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ScavTrap.hpp"
 
 class FragTrap : virtual public ClapTrap {
+
 	public :
 		/* CANONICAL FORM OF CLASS */
 		FragTrap();
@@ -24,6 +25,7 @@ class FragTrap : virtual public ClapTrap {
 		~FragTrap();
 
 		FragTrap(std::string name);
+
 		void	highFivesGuys(void) const;
 };
 

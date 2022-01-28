@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:52 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/19 23:16:54 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 18:45:52 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,61 +17,73 @@
 
 int main() {
 
-	ClapTrap	cp;
+	/* [ First Test (with default contructor)] */
+	std::cout << std::endl;
+	DiamondTrap	dt1;
+	
+	std::cout << "ClapTrap " << dt1.getName() << " has " \
+	<< dt1.getHitPoints() << " hitpoints, " << dt1.getEnergy() \
+	<< " energy and do " << dt1.getAttackDamage() << " attack damage." \
+	<< std::endl;
+	dt1.attack("Terminator");
+	dt1.takeDamage(20);
+	dt1.beRepaired(30);
+	dt1.getState();
+	dt1.takeDamage(29);
+	dt1.getState();
+	dt1.takeDamage(1);
+	dt1.getState();
+	dt1.takeDamage(1);
+	dt1.getState();
+	for (int i = 0; i < 100; i++) {
+		dt1.beRepaired(2);
+	}
+	dt1.getState();
+	dt1.whoAmI();
 
-	// std::cout << std::endl << "< ClapTrap Class >" << std::endl << std::endl;
-
-	// cp.attack("Magician");
-	// cp.takeDamage(20);
-	// cp.beRepaired(30);
-	// ClapTrap cp2 = cp;
-	// cp2.attack("Magician");
-	// cp2.takeDamage(20);
-	// cp2.beRepaired(30);
-
-	// std::cout << std::endl << "< ScavTrap Class >" << std::endl << std::endl;
-	// ScavTrap	st("Spider-Man");
-	// st.attack("The Lizard");
-	// st.takeDamage(20);
-	// st.beRepaired(30);
-	// ScavTrap st2 = st;
-	// st2.attack("Mysterio");
-	// st2.takeDamage(20);
-	// st2.beRepaired(30);
-	// st2.guardGate();
-	// st2.attack("NOBODY");
-
-	// std::cout << std::endl << "< FragTrap Class >" << std::endl << std::endl;
-	// FragTrap	ft("Superman");
-	// ft.attack("Lex Luthor");
-	// ft.takeDamage(20);
-	// ft.beRepaired(30);
-	// FragTrap ft2 = ft;
-	// ft2.attack("Brainiac");
-	// ft2.takeDamage(20);
-	// ft2.beRepaired(30);
-	// ft2.highFivesGuys();
-	// ft2.attack("Bizzaro");
-
-	std::cout << std::endl << "< DiamondTrap Class >" << std::endl << std::endl;
-	// DiamondTrap	dt("Superman");
-	DiamondTrap	dt("Spidy");
-
-	std::cout << "NAME        : " << dt.getName() << std::endl;
-	std::cout << "HITPOINTS   : " << dt.getHitPoints() << std::endl;
-	std::cout << "ENERGY      : " << dt.getEnergy() << std::endl;
-	std::cout << "ATTACKDAMAGE: " << dt.getAttackDamage() << std::endl;
-
-	dt.attack("Lex Luthor");
-	dt.takeDamage(20);
-	dt.beRepaired(30);
-	dt.whoAmI();
-	DiamondTrap dt2 = dt;
-	dt2.attack("Brainiac");
-	dt2.takeDamage(20);
-	dt2.beRepaired(30);
-	dt2.highFivesGuys();
-	dt2.attack("Bizzaro");
+	/* [ Second Test ] */
+	std::cout << std::endl;
+	DiamondTrap	dt2("WALL-E");
+	
+	dt2.getState();
+	dt2.attack("Terminator");
+	dt2.takeDamage(1000);
+	dt2.beRepaired(5);
+	dt2.getState();
+	dt2.attack("Terminator");
+	dt2.attack("Terminator");
+	dt2.attack("Terminator");
+	dt2.attack("Terminator");
+	dt2.takeDamage(5000);
+	dt2.getState();
+	dt2.beRepaired(1);
+	dt2.beRepaired(1);
+	dt2.getState();
+	for (int i = 0; i < 100; i++) {
+		dt2.attack("Terminator");
+	}
+	dt2.getState();
 	dt2.whoAmI();
+
+	/* [ Third Test ] */
+	std::cout << std::endl;
+	DiamondTrap	dt3("Optimus Prime");
+	
+	dt3.getState();
+	dt3.attack("Bender");
+	dt3.takeDamage(1000);
+	dt3.getState();
+	for (int i = 0; i < 102; i++) {
+		dt3.beRepaired(1337);
+	}
+	dt3.getState();
+	for (int i = 0; i < 4; i++) {
+		dt3.attack("Bender");
+	}
+	dt3.getState();
+	dt3.takeDamage(132363);
+	dt3.getState();
+	dt3.whoAmI();
+
 	return (0);
 }

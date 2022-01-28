@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:19:47 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 11:50:39 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:59:08 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ ScavTrap::ScavTrap() :
 ScavTrap::ScavTrap(ScavTrap const & src) :
 	ClapTrap() {
 	std::cout << "[ Copy Constructor Called (ScavTrap) ]" << std::endl;
-	this->_name = src.getName();
-	this->_hitpoints = src.getHitPoints();
-	this->_energy = src.getEnergy();
-	this->_attackDamage = src.getAttackDamage();
+	*this = src;
 }
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs) {
@@ -40,11 +37,21 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) :
-	ClapTrap(name, 100, 50, 20) {}
+	ClapTrap(name, 100, 50, 20) {
+	std::cout << "[ Parameterized (string) Constructor Called (ScavTrap) ]" \
+	<< std::endl;
+}
 
 void	ScavTrap::attack(std::string const & target) {
-	std::cout << "ScavTrap " << this->_name << " attack " << target << ", causing " \
-	<< this->_attackDamage << " points of damage!" << std::endl;
+	if (this->_hitpoints == 0)
+		std::cout << "ScavTrap " << this->_name << " has no hitpoints left to attack." << std::endl;
+	else if (this->_energy == 0)
+		std::cout << "ScavTrap " << this->_name << " has no energy left to attack." << std::endl;
+	else {
+		this->_energy--;
+		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " \
+		<< this->_attackDamage << " points of damage!" << std::endl;
+	}
 }
 
 void	ScavTrap::guardGate() {

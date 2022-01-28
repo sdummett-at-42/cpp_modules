@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:19:28 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 11:55:54 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:01:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ FragTrap::FragTrap() :
 FragTrap::FragTrap(FragTrap const & src) :
 	ClapTrap() {
 	std::cout << "[ Copy Constructor Called (FragTrap) ]" << std::endl;
-	this->_name = src.getName();
-	this->_hitpoints = src.getHitPoints();
-	this->_energy = src.getEnergy();
-	this->_attackDamage = src.getAttackDamage();
+	*this = src;
 }
 
 FragTrap&	FragTrap::operator=(FragTrap const & rhs) {
@@ -40,7 +37,9 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap::FragTrap(std::string name) :
-	ClapTrap(name, 100, 50, 20) {}
+	ClapTrap(name, 100, 100, 30) {
+	std::cout << "[ Parameterized Constructor Called (FragTrap) ]" << std::endl;
+}
 
 void	FragTrap::highFivesGuys(void) const {
 	std::cout << this->_name << " says \" High Fives Guys ! \"" << std::endl;

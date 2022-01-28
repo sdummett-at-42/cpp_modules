@@ -6,12 +6,11 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:47 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 15:41:24 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:59:26 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
 
 ClapTrap::ClapTrap() :
 	_name("AnonymousClapTrap"),
@@ -23,10 +22,7 @@ ClapTrap::ClapTrap() :
 
 ClapTrap::ClapTrap(ClapTrap const & src) {
 	std::cout << "[ Copy Constructor Called (ClapTrap) ]" << std::endl;
-	this->_name = src.getName();
-	this->_hitpoints = src.getHitPoints();
-	this->_energy = src.getEnergy();
-	this->_attackDamage = src.getAttackDamage();
+	*this = src;
 }
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {

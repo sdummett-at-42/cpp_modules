@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:57 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 11:36:28 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:03:15 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 class	ClapTrap {
 
 	public :
-		/* CANONICAL FORM OF THE CLASS */
+		
 		ClapTrap(); /* Default constructor */
 		ClapTrap(ClapTrap const & src); /* Copy constructor */
 		~ClapTrap(); /* Default constructor */
 		ClapTrap&	operator=(ClapTrap const & rhs);
 
+		ClapTrap(std::string name);
 		ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
 
 		void		attack(std::string const & target);
@@ -36,6 +37,7 @@ class	ClapTrap {
 		int			getHitPoints() const;
 		int			getEnergy() const;
 		int			getAttackDamage() const;
+		void		getState() const;
 
 	protected :
 		std::string	_name;
