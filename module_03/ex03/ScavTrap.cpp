@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:19:47 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/19 21:22:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:00:40 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ ScavTrap::ScavTrap() {
 	this->_hitpoints = 100;
 	this->_energy = 50;
 	this->_attackDamage = 20;
-	std::cout << "[ ScavTrap Default Constructor ]" << std::endl;
+	std::cout << "[ Default Constructor Called (ScavTrap) ]" << std::endl;
 }
+
 ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap() {
-	std::cout << "[ ScavTrap Copy Constructor ]" << std::endl;
+	std::cout << "[ Copy Constructor Called (ScavTrap) ]" << std::endl;
 	*this = src;
 }
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs) {
+	std::cout << "[ Assignment Operator Called (ScavTrap) ]" << std::endl;
 	this->_name = rhs.getName();
 	this->_hitpoints = rhs.getHitPoints();
 	this->_energy = rhs.getEnergy();
@@ -33,7 +35,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs) {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "[ ScavTrap Default Destructor ]" << std::endl;
+	std::cout << "[ Default Destructor Called (ScavTrap) ]" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : 

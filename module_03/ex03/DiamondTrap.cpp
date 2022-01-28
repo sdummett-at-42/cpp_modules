@@ -6,27 +6,28 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:48:59 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/19 22:57:46 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:03:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap()
-{
+DiamondTrap::DiamondTrap() :
+	ClapTrap() {
 	this->_name = "AnonymousDiamondTrap";
 	this->_hitpoints = FragTrap::_hitpoints;
 	this->_energy = ScavTrap::_energy;
 	this->_attackDamage = FragTrap::_attackDamage;
-	std::cout << "[ DiamondTrap Default Constructor ]" << std::endl;
+	std::cout << "[ Default Constructor Called (DiamondTrap) ]" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & src) : ClapTrap(), FragTrap(), ScavTrap() {
-	std::cout << "[ DiamondTrap Copy Constructor ]" << std::endl;
+	std::cout << "[ Copy Constructor Called (DiamondTrap) ]" << std::endl;
 	*this = src;
 }
 
 DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & rhs) {
+	std::cout << "[ Assignment Operator Called (DiamondTrap) ]" << std::endl;
 	this->ClapTrap::_name = rhs.ClapTrap::_name;
 	this->_name = rhs.DiamondTrap::_name;
 	this->_hitpoints = rhs.getHitPoints();
@@ -36,7 +37,7 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & rhs) {
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "[ DiamondTrap Default Destructor ]" << std::endl;
+	std::cout << "[ Default Destructor Called (DiamondTrap) ]" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) :
@@ -50,7 +51,7 @@ DiamondTrap::DiamondTrap(std::string name) :
 	this->_hitpoints = FragTrap::getHitPoints();
 	this->_energy = ScavTrap::getEnergy();
 	this->_attackDamage = FragTrap::getAttackDamage();
-	std::cout << "[ DiamondTrap Constructor with String Params ]" << std::endl;
+	std::cout << "[ Parameterized (string) Constructor Called (DiamondTrap) ]" << std::endl;
 }
 
 void	DiamondTrap::attack(std::string const & target) {

@@ -6,31 +6,40 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:47 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/18 22:32:31 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:52:17 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-
-// std::string	_name;
-// int			_hitpoints;
-// int			_energy;
-// int			_attackDamage;
-
-ClapTrap::ClapTrap() : _name("DEFAULT_NAME"), _hitpoints(0), _energy(0), _attackDamage(0) {
-
+ClapTrap::ClapTrap() :
+	_name("AnonymousClapTrap"),
+	_hitpoints(0),
+	_energy(0),
+	_attackDamage(0) {
+	std::cout << "[ Default Constructor Called (ClapTrap) ]" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src) {
+	std::cout << "[ Copy Constructor Called (ClapTrap) ]" << std::endl;
 	this->_name = src.getName();
 	this->_hitpoints = src.getHitPoints();
 	this->_energy = src.getEnergy();
 	this->_attackDamage = src.getAttackDamage();
 }
 
-ClapTrap::~ClapTrap() {
+ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
+	std::cout << "[ Assignment Operator Called (ClapTrap) ]" << std::endl;
+	this->_name = rhs.getName();
+	this->_hitpoints = rhs.getHitPoints();
+	this->_energy = rhs.getEnergy();
+	this->_attackDamage = rhs.getAttackDamage();
+	return (*this);
+	// ASSIGN ALL (this) PRIVATE MEMBERS VALUES TO  PRIVATE MEMBER'S VALUES
+}
 
+ClapTrap::~ClapTrap() {
+	std::cout << "[ Default Destructor Called (ClapTrap) ]" << std::endl;
 }
 
 void	ClapTrap::attack(std::string const & target) {
@@ -47,15 +56,6 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 void	ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << this->_name << ", repaired " \
 	<< amount << " points of health!" << std::endl;
-}
-
-ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
-	this->_name = rhs.getName();
-	this->_hitpoints = rhs.getHitPoints();
-	this->_energy = rhs.getEnergy();
-	this->_attackDamage = rhs.getAttackDamage();
-	return (*this);
-	// ASSIGN ALL (this) PRIVATE MEMBERS VALUES TO  PRIVATE MEMBER'S VALUES
 }
 
 std::string	ClapTrap::getName() const {
