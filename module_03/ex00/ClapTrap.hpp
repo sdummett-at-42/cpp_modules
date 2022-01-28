@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:35:57 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/28 11:14:38 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:25:52 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ public :
 	~ClapTrap(); /* Default constructor */
 	ClapTrap&	operator=(ClapTrap const & rhs);
 
+	ClapTrap(std::string name);
+
 	void		attack(std::string const & target);
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
@@ -33,6 +35,7 @@ public :
 	int			getHitPoints() const;
 	int			getEnergy() const;
 	int			getAttackDamage() const;
+	void		getState() const;
 
 private :
 	std::string	_name;
