@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:29:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 16:25:25 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/29 18:55:11 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ Dog::Dog(Dog const & src) : Animal() {
 }
 
 Dog& Dog::operator=(Dog const & rhs) {
-	/* Equal operator overload */
-	*this = rhs;
+	(void)rhs;
 	return (*this);
 }
 
@@ -32,5 +31,5 @@ Dog::~Dog() {
 }
 
 void	Dog::makeSound() const {
-	std::cout << this->_type << ": Waaaf!" << std::endl;
+	std::cout << "* Waaaf *" << std::endl;
 }

@@ -6,17 +6,18 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:26:38 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 16:28:33 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/29 18:39:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_CLASS_HPP
-#define DOG_CLASS_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include "Animal.hpp"
 #include <iostream>
 
 class	Dog: public Animal {
+
 	public:
 		Dog();
 		Dog(Dog const & src);

@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:30:17 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 16:25:10 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/29 18:54:58 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 Cat::Cat() : Animal("Cat") {
 	std::cout << "[ Default Constructor Called (Cat) ]" << std::endl;
-	// std::cout << "[ Default ] : type : " << this->_type << std::endl;
 }
 
-Cat::Cat(Cat const & src) : Animal() {
+Cat::Cat(Cat const & src) : Animal("cat") {
 	std::cout << "[ Copy Constructor Called (Cat) ]" << std::endl;
 	*this = src;
 }
 
 Cat& Cat::operator=(Cat const & rhs) {
-	/* Equal operator overload */
-	*this = rhs;
+	(void)rhs;
 	return (*this);
 }
 
@@ -33,5 +31,5 @@ Cat::~Cat() {
 }
 
 void	Cat::makeSound() const {
-	std::cout << this->_type << ": Meeeow!" << std::endl;
+	std::cout << "* Meeeow *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:00:11 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 16:44:19 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/29 19:34:04 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,57 @@
 #include "WrongCat.hpp"
 
 int main() {
-	// Animal bird;
-	// std::cout << "The type of animal is " << bird.getType() << std::endl;
-	
-	// Cat cat;
-	// std::cout << "The type of animal is " << cat.getType() << std::endl;
-
-	// Dog dog;
-	// std::cout << "The type of animal is " << dog.getType() << std::endl;
-
-	const WrongAnimal* meta = new WrongAnimal();
-	// const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
-	// std::cout << j->getType() << " " << std::endl;
+	/* [ Subject Test ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Subject Test ] <<<" << std::endl;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
-	// j->makeSound();
+	j->makeSound();
 	meta->makeSound();
+	
+	delete meta;
+	delete i;
+	delete j;
+	
+	/* [ WrongAnimal Class Test ] */
+	std::cout << std::endl;
+	std::cout << ">>> WrongAnimal Class Test ] <<<" << std::endl;
+	const WrongAnimal* Wmeta = new WrongAnimal();
+	const WrongAnimal* Wi = new WrongCat();
+	std::cout << Wi->getType() << " " << std::endl;
+	Wi->makeSound();
+	Wmeta->makeSound();
+	
+	delete Wmeta;
+	delete Wi;
+
+	/* [ Animal Class Test ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Animal Class Test ] <<<" << std::endl;
+	Animal	bird;
+
+	std::cout << "The bird type is " << bird.getType() << std::endl;
+	bird.makeSound();
+
+	/* [ Cat Class Test ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Cat Class Test ] <<<" << std::endl;
+	Cat	cat;
+
+	std::cout << "The cat type is " << cat.getType() << std::endl;
+	cat.makeSound();
+
+	/* [ Dog Class Test ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Dog Class Test ] <<<" << std::endl;
+	Dog dog;
+
+	std::cout << "The dog type is " << dog.getType() << std::endl;
+	dog.makeSound();
+
 	return (0);
 }

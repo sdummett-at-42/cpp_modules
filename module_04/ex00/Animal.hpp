@@ -6,17 +6,18 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:21:24 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 16:28:15 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/29 18:51:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_HPP
-#define ANIMAL_CLASS_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
 class	Animal {
+
 	public:
 		Animal();
 		Animal(Animal const & src);
@@ -24,10 +25,11 @@ class	Animal {
 		virtual ~Animal();
 		Animal(std::string type);
 
-		std::string	getType() const;
+		std::string		getType() const;
 		virtual void	makeSound() const;
+
 	protected:
-		std::string	_type;
+		std::string		_type;
 };
 
 #endif
