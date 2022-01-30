@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:17:10 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/30 16:17:45 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 16:21:42 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Ice::Ice() : AMateria("ice") {
 	std::cout << "[ Default Constructor Called (Ice) ]" << std::endl;
-	/* Init equippedMaterias and materiasOnFloor */
 }
 
 Ice::Ice(Ice const & src) :AMateria() {
