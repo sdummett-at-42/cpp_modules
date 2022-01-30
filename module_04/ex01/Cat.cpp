@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:30:17 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/30 12:57:49 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 13:24:37 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ Cat::Cat(Cat const & src) :
 }
 
 Cat& Cat::operator=(Cat const & rhs) {
-	for (int i = 0; i < 100; i++) {
-		this->_brain->ideas[i] = rhs._brain->ideas[i];
-	}
+	*(this->_brain) = *(rhs._brain);
 	return (*this);
 }
 
