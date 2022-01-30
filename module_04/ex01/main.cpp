@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:00:11 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/30 12:51:57 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 13:08:01 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main() {
 
 	/* [ TEST 1 ] */
 	std::cout << std::endl;
-	std::cout << ">>> TEST 1 <<<" << std::endl;
+	std::cout << ">>> [ TEST 1 ] <<<" << std::endl;
 	Animal *animal1 = new Dog();
 	Animal *animal2 = new Dog();
 
@@ -33,7 +33,7 @@ int main() {
 
 	/* [ TEST 2 ] */
 	std::cout << std::endl;
-	std::cout << ">>> TEST 2 <<<" << std::endl;
+	std::cout << ">>> [ TEST 2 ] <<<" << std::endl;
 	Dog *dog1 = new Dog();
 	Dog *dog2 = new Dog();
 
@@ -43,7 +43,7 @@ int main() {
 
 	/* [ TEST 3 ] */
 	std::cout << std::endl;
-	std::cout << ">>> TEST 3 <<<" << std::endl;
+	std::cout << ">>> [ TEST 3 ] <<<" << std::endl;
 	Cat *cat1 = new Cat();
 	Cat *cat2 = new Cat();
 
@@ -53,7 +53,7 @@ int main() {
 
 	/* [ TEST 4 ] */
 	std::cout << std::endl;
-	std::cout << ">>> TEST 4 <<<" << std::endl;
+	std::cout << ">>> [ TEST 4 ] <<<" << std::endl;
 	const Animal	*animals[ANIMALS_NB];
 
 	for (int i = 0; i < ANIMALS_NB / 2; i++) {

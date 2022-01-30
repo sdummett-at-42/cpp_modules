@@ -6,14 +6,14 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 16:33:29 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/29 19:24:41 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 12:59:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() :
-	_type("AnonymousAnimal") {
+	_type("WrongAnimal") {
 	std::cout << "[ Default Constructor Called (WrongAnimal) ]" << std::endl;
 }
 

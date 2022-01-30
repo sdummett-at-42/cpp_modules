@@ -6,17 +6,19 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:30:17 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/29 18:54:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 13:03:08 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() :
+	Animal("Cat") {
 	std::cout << "[ Default Constructor Called (Cat) ]" << std::endl;
 }
 
-Cat::Cat(Cat const & src) : Animal("cat") {
+Cat::Cat(Cat const & src) :
+	Animal("Cat") {
 	std::cout << "[ Copy Constructor Called (Cat) ]" << std::endl;
 	*this = src;
 }

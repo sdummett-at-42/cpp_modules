@@ -6,15 +6,15 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:27:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/29 19:09:54 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 13:03:17 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
 #include <iostream>
+#include "Animal.hpp"
 
 class	Cat: public Animal {
 

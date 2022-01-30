@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:00:11 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/29 19:34:04 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 13:06:22 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main() {
 	
 	/* [ WrongAnimal Class Test ] */
 	std::cout << std::endl;
-	std::cout << ">>> WrongAnimal Class Test ] <<<" << std::endl;
+	std::cout << ">>> [ WrongAnimal Class Test ] <<<" << std::endl;
 	const WrongAnimal* Wmeta = new WrongAnimal();
 	const WrongAnimal* Wi = new WrongCat();
 	std::cout << Wi->getType() << " " << std::endl;
