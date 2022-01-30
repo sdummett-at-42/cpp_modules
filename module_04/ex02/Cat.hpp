@@ -6,18 +6,19 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:27:50 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 18:04:08 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 14:32:20 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_CLASS_HPP
-#define CAT_CLASS_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
+#include <iostream>
 #include "AAnimal.hpp"
 #include "Brain.hpp"
-#include <iostream>
 
 class	Cat: public AAnimal {
+
 	public:
 		Cat();
 		Cat(Cat const & src);
@@ -25,8 +26,9 @@ class	Cat: public AAnimal {
 		~Cat();
 
 		virtual void	makeSound() const;
+
 	private:
-		Brain*	_brain;
+		Brain	*_brain;
 };
 
 #endif

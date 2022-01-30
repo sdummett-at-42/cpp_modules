@@ -6,11 +6,11 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/26 18:45:22 by sdummett         ###   ########.fr        #
+#    Updated: 2022/01/29 18:36:38 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= c++ 
+CC		= clang++ 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= animal
 SRCS	= main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp

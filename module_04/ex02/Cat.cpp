@@ -6,35 +6,35 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:30:17 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 18:04:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 14:31:02 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : 
+Cat::Cat() :
 	AAnimal("Cat"),
-	_brain(new Brain)
-{
+	_brain(new Brain) {
 	std::cout << "[ Default Constructor Called (Cat) ]" << std::endl;
 }
 
-Cat::Cat(Cat const & src) : AAnimal() {
+Cat::Cat(Cat const & src) :
+	AAnimal("Cat"),
+	_brain(new Brain) {
 	std::cout << "[ Copy Constructor Called (Cat) ]" << std::endl;
 	*this = src;
 }
 
 Cat& Cat::operator=(Cat const & rhs) {
-	/* Equal operator overload */
-	*this = rhs;
+	*(this->_brain) = *(rhs._brain);
 	return (*this);
 }
 
 Cat::~Cat() {
 	std::cout << "[ Default Destructor Called (Cat) ]" << std::endl;
-	delete this->_brain;
+	delete _brain;
 }
 
 void	Cat::makeSound() const {
-	std::cout << this->_type << ": Meeeow!" << std::endl;
+	std::cout << "* Meeeow *" << std::endl;
 }

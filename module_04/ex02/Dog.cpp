@@ -6,35 +6,35 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:29:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 18:04:50 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 14:31:08 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : 
+Dog::Dog() :
 	AAnimal("Dog"),
-	_brain(new Brain)
-{
+	_brain(new Brain) {
 	std::cout << "[ Default Constructor Called (Dog) ]" << std::endl;
 }
 
-Dog::Dog(Dog const & src) : AAnimal() {
+Dog::Dog(Dog const & src) :
+	AAnimal(),
+	_brain(new Brain) {
 	std::cout << "[ Copy Constructor Called (Dog)]" << std::endl;
 	*this = src;
 }
 
 Dog& Dog::operator=(Dog const & rhs) {
-	/* Equal operator overload */
-	*this = rhs;
+	*(this->_brain) = *(rhs._brain);
 	return (*this);
 }
 
 Dog::~Dog() {
 	std::cout << "[ Default Destructor Called (Dog)]" << std::endl;
-	delete this->_brain;
+	delete _brain;
 }
 
 void	Dog::makeSound() const {
-	std::cout << this->_type << ": Waaaf!" << std::endl;
+	std::cout << "* Waaaf *" << std::endl;
 }
