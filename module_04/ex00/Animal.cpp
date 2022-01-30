@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 23:21:11 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/30 11:25:45 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 14:20:42 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,4 @@ std::string	Animal::getType() const {
 	return (this->_type);
 }
 
-void	Animal::makeSound() const {
-	std::cout << "* No Sound *" << std::endl;
-}
+void	Animal::makeSound() const {}
