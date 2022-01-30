@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:09:30 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:49:16 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:45:45 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@
 #include "ICharacter.hpp"
 
 class	AMateria {
-	protected:
-		std::string	_type; //Added by me
-		//[...]
+
 	public:
 		AMateria();
 		AMateria(AMateria const & src);
@@ -28,10 +26,12 @@ class	AMateria {
 		virtual ~AMateria();
 
 		AMateria(std::string const & type);
-		std::string const & getType() const; //Returns the materia type
+		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
-		//[...]
+
+	protected:
+		std::string	_type;
 };
 
 #endif

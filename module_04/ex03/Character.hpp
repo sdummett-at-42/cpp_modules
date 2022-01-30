@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:41:32 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/22 18:53:33 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:57:47 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 
 class	Character : public ICharacter {
+
 	public:
 		Character();
 		Character(Character const & src);
@@ -28,13 +29,14 @@ class	Character : public ICharacter {
 		virtual void		equip(AMateria* m);
 		virtual void		unequip(int idx);
 		virtual void		use(int idx, ICharacter& target);
+
 	private:
 		void				putMateriasOnFloor(AMateria *m);
 		int					getNumberMateriasOnFloor() const;
 		void				deleteMaterias();
 		std::string			_name;
-		AMateria			*_equippedMaterias[4]; // DYNAMICALLY ALLOCATE THIS ARRAY [4]
-		AMateria			**_materiasOnFLoor; 
+		AMateria			*_equippedMaterias[4];
+		AMateria			**_materiasOnFloor; 
 };
 
 #endif

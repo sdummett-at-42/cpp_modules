@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:07:01 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:08:13 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:59:16 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 /* Ice is AMateria concrete class */
 class Ice : public AMateria {
+
 	public:
 		Ice();
 		Ice(Ice const & src);
@@ -25,7 +26,6 @@ class Ice : public AMateria {
 
 		virtual AMateria* clone() const;
 		virtual void use(ICharacter& target);
-
 };
 
 #endif

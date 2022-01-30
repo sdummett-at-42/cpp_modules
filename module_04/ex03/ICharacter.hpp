@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:07:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/21 19:49:05 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:59:31 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 #define ICHARACTER_CLASS_HPP
 
 #include <string>
+
 class AMateria;
 
 class	ICharacter {
+
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
-		
 };
 
 #endif

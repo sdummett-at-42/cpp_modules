@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:08:15 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/22 20:46:31 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:59:36 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "AMateria.hpp"
 
 class IMateriaSource {
+
 	public:
 		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria*) = 0;

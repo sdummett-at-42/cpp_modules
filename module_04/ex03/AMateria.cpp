@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:11:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/22 16:58:10 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:56:36 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,4 @@ std::string const & AMateria::getType() const {
 
 void AMateria::use(ICharacter& target) {
 	(void)target;
-	/* I'll let this member function empty */
 }

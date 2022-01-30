@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:05:34 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/22 20:46:54 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 16:00:29 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "IMateriaSource.hpp"
 
 class	MateriaSource : public IMateriaSource {
+
 	public:
 		MateriaSource();
 		MateriaSource(MateriaSource const & src);
@@ -25,8 +26,8 @@ class	MateriaSource : public IMateriaSource {
 		virtual void 		learnMateria(AMateria* m);
 		virtual AMateria*	createMateria(std::string const & type);
 
-		private:
-			AMateria	*_materias[4];
+	private:
+		AMateria	*_materias[4];
 };
 
 #endif

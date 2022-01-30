@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:17:10 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/22 16:55:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 16:17:45 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ AMateria* Ice::clone() const {
 
 void Ice::use(ICharacter& target) {
 	std::cout << "* shoots an ice bolt at " \
-	<< target.getName() << "*" << std::endl;
+	<< target.getName() << " *" << std::endl;
 }
