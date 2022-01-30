@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 17:29:55 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/20 17:53:20 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/30 12:56:37 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ Brain::Brain(Brain const & src) {
 }
 
 Brain&	Brain::operator=(Brain const & rhs) {
-	(void)rhs;
+	for (int i = 0; i < 100; i++) {
+		this->ideas[i] = rhs.ideas[i];
+	}
 	return (*this);
 }
 
 Brain::~Brain() {
 	std::cout << "[ Default Destructor Called (Brain) ]" << std::endl;
 }
+ 
