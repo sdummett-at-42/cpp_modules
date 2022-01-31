@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:48:13 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/26 16:19:14 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:37:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 int main() {
 	
-	Bureaucrat	b1;
-	std::string	str;
-
-	str = b1.getName();
+	/* [ Test Parameterized constructor ] */
+	Bureaucrat b1("Stone", 1);
 	std::cout << b1 << std::endl;
+
+	try {
+		b1.downgradeGrade();
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << b1 << std::endl;
+
+	/* [ Test Default Constructor ] */
+	// Bureaucrat	b1;
+
+	// str = b1.getName();
 	// std::cout << "Bureaucrat name is " << str << std::endl;
 	// try
 	// {

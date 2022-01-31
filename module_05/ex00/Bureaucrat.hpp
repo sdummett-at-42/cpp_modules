@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:46:38 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/26 16:17:11 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:35:30 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
+
+// struct MyException : public std::exception {
+
+// 	public:
+// 		const char * what () const throw () {
+//     		return "C++ Exception";
+// 		}
+// };
 
 class	Bureaucrat {
 
@@ -24,16 +33,33 @@ class	Bureaucrat {
 		Bureaucrat & operator=(Bureaucrat const & rhs);
 		~Bureaucrat();
 
-		std::string	getName() const;
-		int			getGrade() const;
-		void		upgradeGrade();
-		void		downgradeGrade();
-		
+		Bureaucrat(std::string name, int grade);
+
+		std::string				getName() const;
+		int						getGrade() const;
+		void					upgradeGrade();
+		void					downgradeGrade();
+
+		struct	GradeTooHighException : public std::exception {
+			public:
+				const char * what () const throw () {
+					return "-> Grade Too High <-";
+				}
+		};
+
+		struct	GradeTooLowException : public std::exception {
+			public:
+				const char * what () const throw () {
+					return "-> Grade Too Low <-";
+				}
+		};
 	private:
-		std::string const	_name;
-		int					_grade;
+		std::string const		_name;
+		int						_grade;
 };
 
+
 std::ostream& operator<<(std::ostream& os, Bureaucrat const & obj);
+
 
 #endif
