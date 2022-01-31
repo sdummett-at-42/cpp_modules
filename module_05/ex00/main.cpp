@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:48:13 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/31 16:37:14 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:41:20 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,55 @@
 
 int main() {
 	
-	/* [ Test Parameterized constructor ] */
-	Bureaucrat b1("Stone", 1);
-	std::cout << b1 << std::endl;
-
+	/* [ Create Bureaucrat With Too High Grade ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Create Bureaucrat With Too High Grade ] <<<" << std::endl;
 	try {
-		b1.downgradeGrade();
+		Bureaucrat b1 = Bureaucrat("Kevin", 0);
+		std::cout << b1 << std::endl;
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << b1 << std::endl;
 
-	/* [ Test Default Constructor ] */
-	// Bureaucrat	b1;
+	/* [ Create Bureaucrat With Lowest High Grade ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Create Bureaucrat With Lowest High Grade ] <<<" << std::endl;
 
-	// str = b1.getName();
-	// std::cout << "Bureaucrat name is " << str << std::endl;
-	// try
-	// {
-	// 	Bureaucrat b1;
-	// 	/* do some stuff with bureaucrats */
-	// }
-	// catch (std::exception & e)
-	// {
-	// 	/* handle exception */
-	// }
+	try {
+		Bureaucrat b2 = Bureaucrat("Tanya", 151);
+		std::cout << b2 << std::endl;
+
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	/* [ Upgrade Bureaucrat With Highest Grade ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Create Bureaucrat With Highest Grade ] <<<" << std::endl;
+
+	try {
+		Bureaucrat b3 = Bureaucrat("Amadeus", 1);
+		std::cout << b3 << std::endl;
+		b3.upgrade();
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	/* [ Downgrade Bureaucrat With Lowest Grade ] */
+	std::cout << std::endl;
+	std::cout << ">>> [ Create Bureaucrat  With Lowest Grade ] <<<" << std::endl;
+
+	try {
+		Bureaucrat b4 = Bureaucrat("Angelica", 150);
+		std::cout << b4 << std::endl;
+		b4.downgrade();
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+
 	return 0;
 }

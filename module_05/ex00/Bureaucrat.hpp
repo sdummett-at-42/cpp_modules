@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:46:38 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/31 16:35:30 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:41:55 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,18 @@ class	Bureaucrat {
 
 		std::string				getName() const;
 		int						getGrade() const;
-		void					upgradeGrade();
-		void					downgradeGrade();
+		void					upgrade();
+		void					downgrade();
 
-		struct	GradeTooHighException : public std::exception {
+		class GradeTooHighException: public std::exception {
 			public:
-				const char * what () const throw () {
-					return "-> Grade Too High <-";
-				}
+				char const* what(void) const throw();
+		};
+		class GradeTooLowException: public std::exception {
+			public:
+				char const* what(void) const throw();
 		};
 
-		struct	GradeTooLowException : public std::exception {
-			public:
-				const char * what () const throw () {
-					return "-> Grade Too Low <-";
-				}
-		};
 	private:
 		std::string const		_name;
 		int						_grade;

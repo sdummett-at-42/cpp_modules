@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:46:35 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/31 16:36:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:43:22 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,16 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat::Bureaucrat(std::string name, int grade) :
 	_name(name),
 	_grade(grade) {
-	if (grade < 1)
+	std::cout << "[ Parameterized (string, int) Constructor Called (Bureaucrat) ]" \
+		<< std::endl;
+	if (grade < 1) {
+		this->_grade = 1;
 		throw GradeTooHighException();
-	else if (grade > 150)
-		GradeTooLowException();
+	}
+	else if (grade > 150) {
+		this->_grade = 150;
+		throw GradeTooLowException();
+	}
 }
 
 std::string	Bureaucrat::getName() const {
@@ -54,16 +60,27 @@ int	Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
-void	Bureaucrat::upgradeGrade() {
+void	Bureaucrat::upgrade() {
 	if (this->_grade == 1)
 		throw GradeTooHighException();
 	else
 		this->_grade--;
 }
 
-void	Bureaucrat::downgradeGrade() {
+void	Bureaucrat::downgrade() {
 	if (this->_grade == 150)
 		throw GradeTooLowException();
 	else
 		this->_grade++;
+}
+
+char const* Bureaucrat::GradeTooHighException::what(void) const throw() {
+	return ("Grade Is Too High");
+}
+
+/*
+**	Exception too low.
+*/
+char const* Bureaucrat::GradeTooLowException::what(void) const throw() {
+	return ("Grade Is Too High");
 }
