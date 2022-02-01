@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 16:03:53 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 17:55:17 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:51:58 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,12 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		std::cout << "Opening the file has failed" << std::endl;
 		return ;
 	}
-	// PUT SHRUBBERIES AS ASCII ART
-	ofs << "PUT SHRUBBRIES HERE" << std::endl;
+	ofs << "	   ###            ###           ###" << std::endl;
+	ofs << "      #o###          #o###         #o###" << std::endl;
+	ofs << "    #####o###      #####o###     #####o###" << std::endl;
+	ofs << "   #o#\\#|#/###    #o#\\#|#/###   #o#\\#|#/###" << std::endl;
+	ofs << "    ###\\|/#o#      ###\\|/#o#     ###\\|/#o#" << std::endl;
+	ofs << "     # }|{  #       # }|{  #      # }|{  #" << std::endl;
+	ofs << "       }|{            }|{           }|{" << std::endl;
 	ofs.close();
 }

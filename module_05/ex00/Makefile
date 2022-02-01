@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/01/30 20:25:34 by sdummett         ###   ########.fr        #
+#    Updated: 2022/02/01 20:10:49 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= bureaucrat
 SRCS	= main.cpp Bureaucrat.cpp
 OBJS	= $(SRCS:.cpp=.o)

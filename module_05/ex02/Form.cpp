@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 13:26:16 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 17:32:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/01 18:34:33 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& o, Form const & obj) {
 	else
 		o << "Not Signed" << std::endl;
 	o << "Grade To Sign      : " << obj.getGradeToSign() << std::endl;
-	o << "Grade To Execute   : " << obj.getGradeToExecute() << std::endl;
+	o << "Grade To Execute   : " << obj.getGradeToExecute();
 
 	return (o);
 }

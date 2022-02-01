@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 16:19:31 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 17:53:33 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/01 18:28:14 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 
 	int randomNumber = rand() % 2;
 	std::cout << "VRRRBBBRRRRRVRRRBRRRR !!!" << std::endl;
-	std::cout << "RandomNumber = " << randomNumber << std::endl;
 	if (randomNumber == 0)
 		std::cout << this->_target << " has been robotomized successfully" << std::endl;
 	else
