@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:46:35 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 13:51:43 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/01 17:42:18 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 Bureaucrat::Bureaucrat() :
 	_name("AnonymousBureaucrat"),
 	_grade(150) {
-	std::cout << "[ Default Constructor Called (Bureaucrat) ]" << std::endl;
+	// std::cout << "[ Default Constructor Called (Bureaucrat) ]" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src) {
-	std::cout << "[ Copy Constructor Called (Bureaucrat) ]" << std::endl;
+	// std::cout << "[ Copy Constructor Called (Bureaucrat) ]" << std::endl;
 	*this = src;
 }
 
@@ -29,14 +29,14 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "[ Default Destructor Called (Bureaucrat) ]" << std::endl;
+	// std::cout << "[ Default Destructor Called (Bureaucrat) ]" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) :
 	_name(name),
 	_grade(grade) {
-	std::cout << "[ Parameterized (string, int) Constructor Called (Bureaucrat) ]" \
-		<< std::endl;
+	// std::cout << "[ Parameterized (string, int) Constructor Called (Bureaucrat) ]" 
+	//	<< std::endl;
 	if (grade < 1) {
 		this->_grade = 1;
 		throw GradeTooHighException();
@@ -44,6 +44,28 @@ Bureaucrat::Bureaucrat(std::string name, int grade) :
 	else if (grade > 150) {
 		this->_grade = 150;
 		throw GradeTooLowException();
+	}
+}
+
+void	Bureaucrat::signForm(Form & f) const {
+	try {
+		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cerr << this->_name << " couldn't sign ";
+		std::cerr << f.getName();
+		std::cerr << " because bureaucrat " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const & form) const {
+	try {
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -75,12 +97,9 @@ void	Bureaucrat::downgrade() {
 }
 
 char const* Bureaucrat::GradeTooHighException::what(void) const throw() {
-	return ("Grade Is Too High");
+	return ("bureaucrat grade is too high");
 }
 
-/*
-**	Exception too low.
-*/
 char const* Bureaucrat::GradeTooLowException::what(void) const throw() {
-	return ("Grade Is Too High");
+	return ("bureaucrat grade is too high");
 }
