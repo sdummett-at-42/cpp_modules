@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 20:16:25 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 21:20:40 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/01 21:50:29 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ Intern & Intern::operator=(Intern const & rhs) {
 
 Form *	Intern::makeForm(std::string formName, std::string target) {
 	for (int i = 0; i < 3; i++) {
-		if (formName == this->knownForm[i])
+		if (formName == this->knownForm[i]) {
+			std::cout << "Intern creates " << formName << std::endl;
 			return (this->*forms[i])(target);
+		}
 	}
 	throw FormDontExist();
 	return (NULL);
@@ -56,5 +58,5 @@ Form *	Intern::createRobotomyRequestForm(std::string target) const  {
 }
 
 char const* Intern::FormDontExist::what() const throw() {
-	return "Form Dont Exist";
+	return "Intern can't create a form that doesn't exist";
 }
