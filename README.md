@@ -2,7 +2,7 @@
 
 These modules are an introduction to the C++
 
-## Contributors
+## Author
 
 👤 **Stone**
 
