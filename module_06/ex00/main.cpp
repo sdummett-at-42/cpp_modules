@@ -6,93 +6,101 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:34:48 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/02 18:23:38 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/02 21:02:02 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Literal.hpp"
+#include <string>
+#include <iostream>
+#include <cstdlib>
+
+#define	ERROR	-1
+#define	CHAR	1
+#define INT		2
+#define FLOAT	3
+#define DOUBLE	4
+
+// To test :
+// -inff, +inff, nanf
+// -inf, +infm, nan
+
+void	convertChar(char *str) {
+	char c = str[0];
+
+	std::cout << "char   : " << static_cast<char>(c) << std::endl;
+	std::cout << "int    : " << static_cast<int>(c) << std::endl;
+	std::cout << "float  : " << static_cast<float>(c) << std::endl;
+	std::cout << "double : " << static_cast<double>(c) << std::endl;
+}
+void	convertInt(char *str) {
+	int i = atoi(str);
+
+	std::cout << "char   : " << static_cast<char>(i) << std::endl;
+	std::cout << "int    : " << static_cast<int>(i) << std::endl;
+	std::cout << "float  : " << static_cast<float>(i) << std::endl;
+	std::cout << "double : " << static_cast<double>(i) << std::endl;
+}
+void	convertFloat(char *str) {
+	float f = atof(str);
+
+	std::cout << "char   : " << static_cast<char>(f) << std::endl;
+	std::cout << "int    : " << static_cast<int>(f) << std::endl;
+	std::cout << "float  : " << static_cast<float>(f) << std::endl;
+	std::cout << "double : " << static_cast<double>(f) << std::endl;
+}
+void	convertDouble(char *str) {
+	double d = atof(str);
+
+	std::cout << "char   : " << static_cast<char>(d) << std::endl;
+	std::cout << "int    : " << static_cast<int>(d) << std::endl;
+	std::cout << "float  : " << static_cast<float>(d) << std::endl;
+	std::cout << "double : " << static_cast<double>(d) << std::endl;
+}
+
+int		getType(char *str) {
+	if (strlen (str) == 1 && (str[0] >= '0' && str[0] <= '9'))
+		return (INT);
+
+	int i = 0;
+	
+	while (str[i] != '\0') {
+
+		// std::cout << str[i];
+		i++;
+	}
+	return -1;
+}
+
+void	displayLiteral(char *str) {
+	int	type = getType(str);
+	
+	if (type == CHAR) {
+		convertChar(str);
+	}
+	else if (type == INT) {
+		convertInt(str);
+	}
+	else if (type == FLOAT) {
+		convertFloat(str);
+	}
+	else if (type == DOUBLE) {
+		convertDouble(str);
+	}
+	else if (type == ERROR) {
+		std::cout << "[ Type conversion impossible ]" << std::endl;
+	}
+}
+
 
 int main(int ac, char **av) {
 	(void)ac;
 	(void)av;
 
-	std::cout << std::endl;
-	std::cout << ">>>[ Testing char ]<<<" << std::endl;
-	char c = 'c';
-
-	std::cout << "Char = " << c << std::endl;
-	std::cout << std::endl;
-	std::cout << "=> Char to int      : ";
-	int i = static_cast<int>(c);
-	std::cout << i << std::endl;
-
-	std::cout << "=> Char to float    : ";
-	float f = static_cast<float>(c);
-	std::cout << f << std::endl;
-
-	std::cout << "=> Char to double   : ";
-	double d = static_cast<double>(c);
-	std::cout << d << std::endl;
-
-	std::cout << std::endl;
-	std::cout << ">>>[ Testing int ]<<<" << std::endl;
-	int i1 = 42;
-	std::cout << "Int = " << i1 << std::endl;
-
-	std::cout << "=> Int to char      : ";
-	char c1 = static_cast<char>(i1);
-	std::cout << c1 << std::endl;
-
-	std::cout << "=> Int to float     : ";
-	float f1 = static_cast<float>(i1);
-	std::cout << f1 << std::endl;
-
-	std::cout << "=> Int to double    : ";
-	double d1 = static_cast<double>(i1);
-	std::cout << d1 << std::endl;
-
-	std::cout << std::endl;
-	std::cout << ">>>[ Testing float ]<<<" << std::endl;
-	float f2 = 42.42f;
-	std::cout << "Float = " << f2 << std::endl;
-
-	std::cout << "=> Float to char    : ";
-	char c2 = static_cast<char>(f2);
-	std::cout << c2 << std::endl;
-
-	std::cout << "=> Float to int     : ";
-	int i2 = static_cast<int>(f2);
-	std::cout << i2 << std::endl;
-
-	std::cout << "=> Float to double  : ";
-	double d2 = static_cast<double>(f2);
-	std::cout << d2 << std::endl;
-
-	std::cout << std::endl;
-	std::cout << ">>>[ Testing double ]<<<" << std::endl;
-	double d3 = 88.88;
-	std::cout << "Double = " << d3 << std::endl;
-
-	std::cout << "=> Double to char  : ";
-	char c3 = static_cast<char>(d3);
-	std::cout << c3 << std::endl;
-
-	std::cout << "=> Double to int   : ";
-	int i3 = static_cast<int>(d3);
-	std::cout << i3 << std::endl;
-
-	std::cout << "=> Double to float : ";
-	float f3 = static_cast<float>(d3);
-	std::cout << f3 << std::endl;
-
-
-	// if (ac != 2) {
-	// 		std::cout << "Usage: ./convert literal" << std::endl;
-	// 		std::cout << "Literal can be a char, a int, a float or a double" << std::endl;
-	// 		return (0);
-	// }
-	// Literal	lit(av[1]);
-
-
+	if (ac != 2) {
+			std::cout << "Usage: ./convert literal" << std::endl;
+			std::cout << "Literal can be a char, a int, a float or a double" << std::endl;
+			return (0);
+	}
+	displayLiteral(av[1]);
 	return 0;
 }
