@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 20:13:47 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 21:39:22 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/05 14:11:41 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,5 +237,24 @@ int main() {
 		std::cerr << e.what() << std::endl;
 	}
 	
+	/* [ PresidentialPardonForm Test 5 ] */
+	std::cout << std::endl;
+	std::cout << BGRN << ">>>[ PresidentialPardonForm Test 5 ]<<<" << RESET << std::endl;
+	Bureaucrat b7("Héphaïstos", 23);
+	std::cout << b7 << std::endl;
+	Form * f7;
+	try {
+		f7 = Intern().makeForm("PresidentialPardonForm", "Aphrodite");
+		std::cout << std::endl << *f7 << std::endl << std::endl;
+		b7.executeForm(*f7);
+		b7.signForm(*f7);
+		std::cout << std::endl << *f7 << std::endl << std::endl;
+		b7.executeForm(*f7);
+		delete f7;
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+
 	return (0);
 }

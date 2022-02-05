@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:46:35 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/01 15:23:26 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:52:53 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,5 @@ char const* Bureaucrat::GradeTooHighException::what(void) const throw() {
 }
 
 char const* Bureaucrat::GradeTooLowException::what(void) const throw() {
-	return ("bureaucrat grade is too high");
+	return ("bureaucrat grade is too low");
 }
