@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:46:38 by sdummett          #+#    #+#             */
-/*   Updated: 2022/01/31 20:41:55 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/05 13:38:11 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 #include <string>
 #include <iostream>
 #include <exception>
-
-// struct MyException : public std::exception {
-
-// 	public:
-// 		const char * what () const throw () {
-//     		return "C++ Exception";
-// 		}
-// };
 
 class	Bureaucrat {
 
@@ -54,8 +46,6 @@ class	Bureaucrat {
 		int						_grade;
 };
 
-
 std::ostream& operator<<(std::ostream& os, Bureaucrat const & obj);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 14:13:27 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/04 17:42:20 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/04 17:44:30 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main() {
 
 		std::cout << "Array's size is (using array.size()): " << array.size() << std::endl;
 		try {
-			std::cout << std::endl << ">>> Trying to access index 0" << std::endl;
+			std::cout << std::endl << ">>> Trying to access index [0]" << std::endl;
 			std::cout << array[0] << std::endl;
 		}
 		catch (std::exception & e) {
