@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:12 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/07 17:37:52 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/07 18:56:15 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ Span::Span(unsigned int N) :
 void	Span::addNumber(int nb) {
 	if (spanVector.size() == this->_size)
 		throw SpanIsFull();
-	spanVector.push_back(nb);
+	spanVector.erase(spanVector.begin() + this->_size);
+	spanVector.insert(spanVector.begin() + this->_size, nb);
 	this->_size++;
 }
 
@@ -52,22 +53,63 @@ void	Span::fill() {
 	this->_size = this->spanVector.size(); 
 }
 
-void	Span::shortestSpan() const {
+long long	Span::shortestSpan() const {
 	if (this->_size == 0)
 		throw NoNumbersStored();
 	else if (this->_size == 1)
 		throw OnlyOneNumber();
+	long long	min;
+	long long	max;
+	long long	tmp;
+	long long	span;
+
+	std::vector<int>::const_iterator it = this->spanVector.begin();
+	min = *(std::min_element(it, it + 2));
+	max = *(std::max_element(it, it + 2));
+	span = max - min;
+	for (it = this->spanVector.begin(); it != spanVector.end() - 1; ++it) {
+		min = *(std::min_element(it, it + 2));
+		max = *(std::max_element(it, it + 2));
+		tmp = max - min;
+		if (tmp < 0)
+			tmp = tmp * -1;
+		if (tmp < span)
+			span = tmp;
+	}
+	return span;
 }
 
-void	Span::longestSpan() const {
+long long	Span::longestSpan() const {
 	if (this->_size == 0)
 		throw NoNumbersStored();
 	else if (this->_size == 1)
 		throw OnlyOneNumber();
+
+	long long	min;
+	long long	max;
+	long long	tmp;
+	long long	span;
+
+	span = 0;
+	std::vector<int>::const_iterator it = this->spanVector.begin();
+	min = *(std::min_element(it, it + 2));
+	max = *(std::max_element(it, it + 2));
+	span = max - min;
+
+	for (it = this->spanVector.begin(); it != spanVector.end() - 1; ++it) {
+		min = *(std::min_element(it, it + 2));
+		max = *(std::max_element(it, it + 2));
+		tmp = max - min;
+		if (tmp < 0)
+			tmp = tmp * -1;
+		if (tmp > span)
+			span = tmp;
+	}
+	return span;
 }
 
 void	Span::printSpan() const {
-	std::cout << "myvector contains:";
+	std::cout << "Span contains:";
 	for (std::vector<int>::const_iterator it = spanVector.begin(); it != spanVector.end(); ++it)  {
 		std::cout << " - " << *it;
 	}

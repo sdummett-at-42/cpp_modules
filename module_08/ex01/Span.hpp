@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/07 17:32:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/07 18:21:30 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ class	Span {
 
 		Span(unsigned int N);
 
-		void	addNumber(int nb);
-		void	fill();
+		void		addNumber(int nb);
+		void		fill();
 
-		void	shortestSpan() const;
-		void	longestSpan() const ;
-		void	printSpan() const;
+		long long	shortestSpan() const;
+		long long	longestSpan() const ;
+		void		printSpan() const;
 
 		class	SpanIsFull : public std::exception {
 			public:
