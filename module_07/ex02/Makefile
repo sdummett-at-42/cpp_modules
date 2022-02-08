@@ -6,12 +6,12 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 20:08:23 by sdummett          #+#    #+#              #
-#    Updated: 2022/02/04 15:41:33 by sdummett         ###   ########.fr        #
+#    Updated: 2022/02/08 18:19:32 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= array
 SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
