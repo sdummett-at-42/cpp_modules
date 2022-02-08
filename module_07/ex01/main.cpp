@@ -6,18 +6,20 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:03:00 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/04 14:09:12 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:44:37 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
-void	addOne(int & elem) {
-	elem += 1;
+void	addOne(int const & elem) {
+	int & elem2 = const_cast<int &>(elem);
+	elem2 += 1;
 }
 
-void	removeTwo(int & elem) {
-	elem -= 2;
+void	removeTwo(int const & elem) {
+	int & elem2 = const_cast<int &>(elem);
+	elem2 -= 2;
 }
 
 int main() {
