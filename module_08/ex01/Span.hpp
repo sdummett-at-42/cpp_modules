@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/09 19:34:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 20:32:51 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class	Span {
 		std::vector<int>	_spanVector;
 		unsigned int		_size;
 		void				_checkSpan() const;
-		void				_removeDuplicates(std::vector<int> & v);
+		void				_sortVector(std::vector<int> & vec);
 		void				_getDifferences(std::vector<int> & differences);
 		Span();
 };

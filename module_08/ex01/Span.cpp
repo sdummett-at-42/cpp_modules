@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:12 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/09 19:34:03 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 20:57:39 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Span::Span(Span const & src) {
 
 Span & Span::operator=(Span const & rhs) {
 	this->_spanVector = rhs._spanVector;
-	
 	this->_size = rhs._size;
 	return (*this);
 }
@@ -59,18 +58,20 @@ void	Span::_checkSpan() const{
 		throw OnlyOneNumber();
 }
 
-void	Span::_removeDuplicates(std::vector<int> & vec) {
-	std::set<int>	s(vec.begin(), vec.end());
-	vec.assign(s.begin(), s.end());
+void	Span::_sortVector(std::vector<int> & vec) {
+	std::sort(vec.begin(), vec.end());
 }
 
 void	Span::_getDifferences(std::vector<int> & differences) {
 	std::vector<int> sortedVector(this->_spanVector);
 
-	std::sort(sortedVector.begin(), sortedVector.end());
-	_removeDuplicates(sortedVector);
+	_sortVector(sortedVector);
+
 	std::adjacent_difference(sortedVector.begin(), \
 		sortedVector.end(), differences.begin());
+	
+	_sortVector(differences);
+
 }
 
 long long	Span::shortestSpan() {
@@ -81,7 +82,7 @@ long long	Span::shortestSpan() {
 
 		_getDifferences(differences);
 
-		return (*(differences.end() - 2));
+		return (*(differences.begin()));
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
@@ -94,10 +95,10 @@ long long	Span::longestSpan() {
 	try {
 		_checkSpan();
 
-		std::vector<int> differences(this->_spanVector.size());
+		std::vector<int> sortedVector(this->_spanVector);
 
-		_getDifferences(differences);
-		return (*(differences.begin() + 1));
+		_sortVector(sortedVector);
+		return (*(sortedVector.end() - 1) - *(sortedVector.begin()));
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;

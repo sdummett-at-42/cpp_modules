@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:57:56 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/09 19:34:24 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 20:35:56 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,77 @@
 #include <vector>
 #include "Span.hpp"
 
+void	removeDuplicates(std::vector<int> & vec) {
+	std::set<int>	s(vec.begin(), vec.end());
+	vec.assign(s.begin(), s.end());
+}
+
 /* Use 420000 for tab >= 10000 */
 int randomNumber() {
-	return (std::rand() % 100);
+	return (std::rand() % 10);
 }
 
 void fillVector(std::vector<int> & vec) {
 	std::srand (unsigned (std::time(0)));
 	std::generate(vec.begin(), vec.end(), randomNumber);
+	removeDuplicates(vec);
 }
 
 int main() {
 
 	/* [ TEST ] */
 
-	std::cout << std::endl;
-	std::cout << ">>>[ TEST ]<<<" << std::endl;
+	// std::cout << std::endl;
+	// std::cout << ">>>[ TEST ]<<<" << std::endl;
 
-	Span sp1(100);
-	sp1.addNumber(1);
-	sp1.addNumber(42);
-	sp1.addNumber(1);
-	sp1.addNumber(44);
-	sp1.addNumber(45);
-	sp1.printSpan();
+	// Span sp1(100);
+	// sp1.addNumber(1);
+	// sp1.addNumber(42);
+	// sp1.addNumber(1);
+	// sp1.addNumber(44);
+	// sp1.addNumber(45);
+	// sp1.printSpan();
 	
-	std::cout << "shortest span = " << sp1.shortestSpan() << std::endl;
-	std::cout << "longest  span = " << sp1.longestSpan() << std::endl;
+	// std::cout << "shortest span = " << sp1.shortestSpan() << std::endl;
+	// std::cout << "longest  span = " << sp1.longestSpan() << std::endl;
 	
-	sp1.printSpan();
+	// sp1.printSpan();
+
+
+	/* fillVector TEST */
+	std::vector<int> vec(12);
+	fillVector(vec);
+	std::vector<int>::iterator it;
+	// for (it = vec.begin(); it != vec.end(); ++it) {
+	// 	std::cout << *it << "---";
+	// }
+	// std::cout << std::endl;
+
+	Span sp(100);
+
+	sp.betterAddNumber(vec.begin(), vec.end());
+	sp.printSpan();
+
+	std::cout << "shortest span = " << sp.shortestSpan() << std::endl;
+	std::cout << "longest  span = " << sp.longestSpan() << std::endl;
+	
+
+// // SUUUUUUUUUUUUUBJECT
+// Span sp = Span(5);
+// sp.addNumber(6);
+// sp.addNumber(3);
+// sp.addNumber(17);
+// sp.addNumber(9);
+// sp.addNumber(11);
+// std::cout << sp.shortestSpan() << std::endl;
+// std::cout << sp.longestSpan() << std::endl;
+
+
+
+
+
+
+
 
 
 	// /* [ Test with 5 elements (using addNumber) ] */
