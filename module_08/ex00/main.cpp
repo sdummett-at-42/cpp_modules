@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 20:30:08 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/07 13:53:57 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:03:10 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include <algorithm>
 #include <deque>
 #include <list>
-#include <map>
-#include <queue>
 #include <set>
-#include <stack>
 #include <vector>
 
 int main() {
@@ -101,67 +98,6 @@ int main() {
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 	}
-
-	// std::cout << std::endl;
-	// std::cout << ">>>[ Test On Map ]<<<" << std::endl;
-	// try {
-	// 	std::map<int, int> container;
-	// 	container.insert(12, 4);
-	// 	container.insert(55, 234);
-	// 	container.insert(23423, 54);
-	// 	container.insert(2564, -93);
-	// 	container.insert(2342, 42);
-
-
-	// 	std::map<int, int>::iterator it;
-		
-	// 	it = easyfind(container, 42);
-	// 	std::cout << "Occurence found : " << *it << std::endl;
-	// 	it = easyfind(container, 1337);
-	// 	std::cout << "Occurence found : " << *it << std::endl;
-	// }
-	// catch (std::exception & e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-
-
-	// std::cout << std::endl;
-	// std::cout << ">>>[ Test On Queue ]<<<" << std::endl;
-	// try {
-	// 	std::queue<int> container;
-	// 	for(int i = 0; i < 5; i++) {
-	// 		container.push(i + 42);
-	// 	}
-
-	// 	std::queue<int>::iterator it;
-		
-	// 	it = easyfind(container, 42);
-	// 	std::cout << "Occurence found : " << *it << std::endl;
-	// it = easyfind(container, 1337);
-	// 	std::cout << "Occurence found : " << *it << std::endl;
-	// }
-	// catch (std::exception & e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-
-	// 	std::cout << std::endl;
-	// std::cout << ">>>[ Test On Stack ]<<<" << std::endl;
-	// try {
-	// 	std::stack<int> container;
-	// 	for(int i = 0; i < 5; i++) {
-	// 		container.push(i + 42);
-	// 	}
-
-	// 	std::stack<int>::iterator it;
-		
-	// 	it = easyfind(container, 42);
-	// 	std::cout << "Occurence found : " << *it << std::endl;
-	// it = easyfind(container, 1337);
-	// 	std::cout << "Occurence found : " << *it << std::endl;
-	// }
-	// catch (std::exception & e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
 
 	return 0;
 }

@@ -6,15 +6,15 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/07 18:21:30 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:39:33 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <vector>
 #include <cstdlib>
+#include <iostream>
 #include <algorithm>
-#include <iostream> //temporary
-#include <ctime>        // std::time
+#include <ctime>
 
 class	Span {
 	public :
@@ -53,6 +53,6 @@ class	Span {
 		};
 
 	private :
-		std::vector<int>	spanVector;
+		std::vector<int>	_spanVector;
 		unsigned int		_size;
 };
