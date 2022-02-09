@@ -6,15 +6,11 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:12 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/09 12:47:07 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:34:03 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-
-Span::Span() :
-	_spanVector(0),
-	_size(0) {}
 
 Span::Span(Span const & src) {
 	*this = src;
@@ -30,82 +26,84 @@ Span & Span::operator=(Span const & rhs) {
 Span::~Span() {}
 
 Span::Span(unsigned int N) :
-	_spanVector(N),
-	_size(0) {}
+	_size(N) {}
 
 void	Span::addNumber(int nb) {
-	if (_spanVector.size() == this->_size)
-		throw SpanIsFull();
-	_spanVector.erase(_spanVector.begin() + this->_size);
-	_spanVector.insert(_spanVector.begin() + this->_size, nb);
-	this->_size++;
-}
-
-int randomNumber() {
-	return (std::rand() % 4200000);
-}
-
-void	Span::fill() {
-	if (this->_size == this->_spanVector.size())
-		throw SpanIsFull();
-	std::srand ( unsigned ( std::time(0) ) );
-	std::generate(_spanVector.begin(), _spanVector.end(), randomNumber);
-	this->_size = this->_spanVector.size(); 
-}
-
-long long	Span::shortestSpan() const {
-	if (this->_size == 0)
-		throw NoNumbersStored();
-	else if (this->_size == 1)
-		throw OnlyOneNumber();
-	long long	min;
-	long long	max;
-	long long	tmp;
-	long long	span;
-
-	std::vector<int>::const_iterator it = this->_spanVector.begin();
-	min = *(std::min_element(it, it + 2));
-	max = *(std::max_element(it, it + 2));
-	span = max - min;
-	for (it = this->_spanVector.begin(); it != _spanVector.end() - 1; ++it) {
-		min = *(std::min_element(it, it + 2));
-		max = *(std::max_element(it, it + 2));
-		tmp = max - min;
-		if (tmp < 0)
-			tmp = tmp * -1;
-		if (tmp < span)
-			span = tmp;
+	try {
+		if (_spanVector.size() == this->_size)
+			throw SpanIsFull();
+		_spanVector.push_back(nb);
 	}
-	return span;
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
 
-long long	Span::longestSpan() const {
-	if (this->_size == 0)
-		throw NoNumbersStored();
-	else if (this->_size == 1)
-		throw OnlyOneNumber();
-
-	long long	min;
-	long long	max;
-	long long	tmp;
-	long long	span;
-
-	span = 0;
-	std::vector<int>::const_iterator it = this->_spanVector.begin();
-	min = *(std::min_element(it, it + 2));
-	max = *(std::max_element(it, it + 2));
-	span = max - min;
-
-	for (it = this->_spanVector.begin(); it != _spanVector.end() - 1; ++it) {
-		min = *(std::min_element(it, it + 2));
-		max = *(std::max_element(it, it + 2));
-		tmp = max - min;
-		if (tmp < 0)
-			tmp = tmp * -1;
-		if (tmp > span)
-			span = tmp;
+void	Span::betterAddNumber(std::vector<int>::iterator it, \
+		std::vector<int>::iterator ite) {
+	try {
+		while (it != ite) {
+			addNumber(*it);
+			it++;
+		}
 	}
-	return span;
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	Span::_checkSpan() const{
+	if (this->_spanVector.size() == 0)
+		throw NoNumbersStored();
+	else if (this->_spanVector.size() == 1)
+		throw OnlyOneNumber();
+}
+
+void	Span::_removeDuplicates(std::vector<int> & vec) {
+	std::set<int>	s(vec.begin(), vec.end());
+	vec.assign(s.begin(), s.end());
+}
+
+void	Span::_getDifferences(std::vector<int> & differences) {
+	std::vector<int> sortedVector(this->_spanVector);
+
+	std::sort(sortedVector.begin(), sortedVector.end());
+	_removeDuplicates(sortedVector);
+	std::adjacent_difference(sortedVector.begin(), \
+		sortedVector.end(), differences.begin());
+}
+
+long long	Span::shortestSpan() {
+	try {
+		_checkSpan();
+
+		std::vector<int> differences(this->_spanVector.size());
+
+		_getDifferences(differences);
+
+		return (*(differences.end() - 2));
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+	
+	return 0;
+}
+
+long long	Span::longestSpan() {
+	try {
+		_checkSpan();
+
+		std::vector<int> differences(this->_spanVector.size());
+
+		_getDifferences(differences);
+		return (*(differences.begin() + 1));
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	return 0;
 }
 
 void	Span::printSpan() const {

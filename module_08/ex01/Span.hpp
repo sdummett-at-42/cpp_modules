@@ -6,19 +6,20 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:21 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/09 12:39:33 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:34:44 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <algorithm>
+#include <numeric>
+#include <set>
 #include <vector>
 #include <cstdlib>
 #include <iostream>
-#include <algorithm>
 #include <ctime>
 
 class	Span {
 	public :
-		Span();
 		Span(Span const & src);
 		Span & operator=(Span const & rhs);
 		~Span();
@@ -26,10 +27,11 @@ class	Span {
 		Span(unsigned int N);
 
 		void		addNumber(int nb);
-		void		fill();
+		void		betterAddNumber(std::vector<int>::iterator it, \
+			std::vector<int>::iterator ite);
 
-		long long	shortestSpan() const;
-		long long	longestSpan() const ;
+		long long	shortestSpan();
+		long long	longestSpan();
 		void		printSpan() const;
 
 		class	SpanIsFull : public std::exception {
@@ -55,4 +57,8 @@ class	Span {
 	private :
 		std::vector<int>	_spanVector;
 		unsigned int		_size;
+		void				_checkSpan() const;
+		void				_removeDuplicates(std::vector<int> & v);
+		void				_getDifferences(std::vector<int> & differences);
+		Span();
 };
