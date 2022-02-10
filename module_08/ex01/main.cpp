@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:57:56 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/10 17:09:08 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:12:49 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,6 @@ void fillVector(std::vector<int> & vec) {
 }
 
 int main() {
-	
-	/* [ Subject Test ] */
-	std::cout << ">>>[ Subject Test ]<<<" << std::endl;
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-
 
 	/* [ Test with 5 elements (using addNumber) ] */
 	std::cout << std::endl;
