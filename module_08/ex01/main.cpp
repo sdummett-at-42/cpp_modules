@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:57:56 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/10 17:12:49 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:15:37 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "Span.hpp"
 
 #define	ONE_HUNDRED 			100
+#define	FIVE_HUNDRED			500
 #define TEN_THOUSAND			10000
 #define	FIFTY_THOUSAND			50000
 #define	ONE_HUNDRED_THOUSAND	100000
@@ -62,7 +63,7 @@ int main() {
 	Span				sp2(12);
 	std::vector<int>	vec2(12);
 
-	randValue = ONE_HUNDRED;
+	randValue = FIVE_HUNDRED;
 	fillVector(vec2);
 	sp2.betterAddNumber(vec2.begin(), vec2.end());
 	sp2.printSpan();
