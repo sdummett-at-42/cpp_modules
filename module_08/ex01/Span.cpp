@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:58:12 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/09 20:57:39 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/10 15:16:10 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,24 @@ void	Span::betterAddNumber(std::vector<int>::iterator it, \
 	}
 }
 
+void	Span::_getDifferences(std::vector<int> & differences) {
+	std::vector<int> sortedVector(this->_spanVector);
+
+	std::sort(sortedVector.begin(), sortedVector.end());
+
+	std::adjacent_difference(sortedVector.begin(), \
+		sortedVector.end(), differences.begin());
+
+	differences.erase(differences.begin());
+
+	std::sort(differences.begin(), differences.end());
+}
+
 void	Span::_checkSpan() const{
 	if (this->_spanVector.size() == 0)
 		throw NoNumbersStored();
 	else if (this->_spanVector.size() == 1)
 		throw OnlyOneNumber();
-}
-
-void	Span::_sortVector(std::vector<int> & vec) {
-	std::sort(vec.begin(), vec.end());
-}
-
-void	Span::_getDifferences(std::vector<int> & differences) {
-	std::vector<int> sortedVector(this->_spanVector);
-
-	_sortVector(sortedVector);
-
-	std::adjacent_difference(sortedVector.begin(), \
-		sortedVector.end(), differences.begin());
-	
-	_sortVector(differences);
-
 }
 
 long long	Span::shortestSpan() {
@@ -81,6 +78,7 @@ long long	Span::shortestSpan() {
 		std::vector<int> differences(this->_spanVector.size());
 
 		_getDifferences(differences);
+
 
 		return (*(differences.begin()));
 	}
@@ -97,7 +95,7 @@ long long	Span::longestSpan() {
 
 		std::vector<int> sortedVector(this->_spanVector);
 
-		_sortVector(sortedVector);
+		std::sort(sortedVector.begin(), sortedVector.end());
 		return (*(sortedVector.end() - 1) - *(sortedVector.begin()));
 	}
 	catch (std::exception & e) {
@@ -108,9 +106,13 @@ long long	Span::longestSpan() {
 }
 
 void	Span::printSpan() const {
-	std::cout << "Span contains:" << std::endl;
-	for (std::vector<int>::const_iterator it = _spanVector.begin(); it != _spanVector.end(); ++it)  {
+	std::vector<int> sortedVector(this->_spanVector);
+
+	std::sort(sortedVector.begin(), sortedVector.end());
+	
+	std::cout << "Span is size " << sortedVector.size() << " and contains :" << std::endl;
+	for (std::vector<int>::const_iterator it = sortedVector.begin(); it != sortedVector.end(); ++it)  {
 		std::cout << "[" << *it << "] ";
 	}
-	std::cout << '\n';
+	std::cout << std::endl;
 }
