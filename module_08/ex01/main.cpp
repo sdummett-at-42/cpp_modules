@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:57:56 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/10 15:27:07 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:09:08 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,19 @@
 
 int	randValue = 100;
 
+int randomNumber() {
+	return (std::rand() % randValue);
+}
+
 void	removeDuplicates(std::vector<int> & vec) {
 	std::set<int>	s(vec.begin(), vec.end());
 	vec.assign(s.begin(), s.end());
 }
 
-/* Use 420000 for arr >= 10000 */
-
-int randomNumber() {
-	return (std::rand() % randValue);
-}
-
 void fillVector(std::vector<int> & vec) {
 	std::srand (unsigned (std::time(0)));
-	// std::cout << "[fillVector]: vec.size = " << vec.size() << std::endl;
 	std::generate(vec.begin(), vec.end(), randomNumber);
-	// std::cout << "[fillVector]: vec.size = " << vec.size() << std::endl;
 	removeDuplicates(vec);
-
 }
 
 int main() {
