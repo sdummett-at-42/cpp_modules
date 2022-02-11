@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 16:25:13 by sdummett          #+#    #+#             */
-/*   Updated: 2022/02/08 17:10:06 by sdummett         ###   ########.fr       */
+/*   Updated: 2022/02/11 13:19:29 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,30 @@
 
 #include <stack>
 
-template <typename T>
-class	MutantStack : public std::stack<T>
-{
+template<typename T>
+class MutantStack : public std::stack<T> {
 	public:
-		typedef	typename std::deque<T>::iterator iterator;
-		iterator	begin();
-		iterator	end();
+		MutantStack() {}
+		~MutantStack() {}
+		
+		MutantStack(const MutantStack<T>& src) { 
+			*this = src;
+		}
+
+		MutantStack<T>& operator=(const MutantStack<T>& rhs) {
+			this->c = rhs.c;
+			return *this;
+		}
+		
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
+		iterator begin() {
+			return this->c.begin();
+		}
+
+		iterator end() {
+			return this->c.end();
+		}
 };
-
-template <typename T>
-typename MutantStack<T>::iterator	MutantStack<T>::begin()
-{
-	return (this->c.begin());
-}
-
-template <typename T>
-typename MutantStack<T>::iterator	MutantStack<T>::end()
-{
-	return (this->c.end());
-}
 
 #endif
